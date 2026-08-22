@@ -1,0 +1,12 @@
+# Build output
+target/
+
+# The interface's dependencies and build, neither of which is source. `gui/` is
+# uptime-kuma's own front end (see ACKNOWLEDGEMENTS.md); its package.json and
+# package-lock.json are tracked so the tree can be restored, its installed tree is not.
+gui/node_modules/
+gui/dist/
+gui/tmp/
+
+# Scratch from running the benchmark against the project's own classpath
+cp.txt
