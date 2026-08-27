@@ -11,4 +11,109 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>uptime-kuma-akka</name>
+
+    <dependencies>
+        <!-- Password hashing. uptime-kuma stores bcrypt cost-10 hashes and verifies
+             legacy sha1 ones; both shapes have to be readable here. -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+
+        <!-- The json-query monitor type evaluates JSONata, not JSONPath: the source runs the
+             stored expression through the jsonata library and then compares with a second
+             jsonata expression. This is that library's Java port. -->
+        <dependency>
+            <groupId>com.dashjoin</groupId>
+            <artifactId>jsonata</artifactId>
+            <version>0.9.8</version>
+        </dependency>
+
+        <!-- The mqtt json-query check type and the snmp check both read a JSONPath. -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+        <!-- The dns monitor type resolves every record type the source offers, against a
+             caller-named resolver, which the JDK's own resolver cannot express. -->
+        <dependency>
+            <groupId>dnsjava</groupId>
+            <artifactId>dnsjava</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+
+        <!-- The snmp monitor type speaks v1, v2c and v3. -->
+        <dependency>
+            <groupId>org.snmp4j</groupId>
+            <artifactId>snmp4j</artifactId>
+            <version>3.8.2</version>
+        </dependency>
+
+        <!-- The mqtt monitor type subscribes and waits for one retained message. -->
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+        <!-- The kafka-producer monitor type produces one message. -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>3.9.0</version>
+        </dependency>
+
+        <!-- The database monitor types run one query each. -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.4</version>
+            <!-- Both of these ship a newer copy of a library the Akka runtime already
+                 provides, and the runtime's copy wins on the deployed classpath. Excluded
+                 so the build fails here rather than behaving differently once deployed. -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.checkerframework</groupId>
+                    <artifactId>checker-qual</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.8.1.jre11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc11</artifactId>
+            <version>23.6.0.24.10</version>
+        </dependency>
+
+        <!-- Cron maintenance windows, in the same five-field dialect the source's
+             scheduler accepts. -->
+        <dependency>
+            <groupId>com.cronutils</groupId>
+            <artifactId>cron-utils</artifactId>
+            <version>9.2.1</version>
+        </dependency>
+    </dependencies>
 </project>

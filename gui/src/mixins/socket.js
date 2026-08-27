@@ -1,4 +1,4 @@
-import { akkaFeed } from "./akka-feed.js";
+import { akkaSocket } from "./akka-socket.js";
 import { useToast } from "vue-toastification";
 import jwtDecode from "jwt-decode";
 import Favico from "favico.js";
@@ -14,21 +14,7 @@ import {
 } from "../util-frontend.js";
 const toast = useToast();
 
-// Every method below that this port does not serve still calls socket.emit(). The
-// stand-in answers them the way the interface already handles a refusal, so a screen
-// outside the slice degrades instead of throwing on a missing object.
-const socket = {
-    connected: true,
-    emit(event, ...args) {
-        const callback = args[args.length - 1];
-        if (typeof callback === "function") {
-            callback({ ok: false, msg: `${event} is outside this port's slice` });
-        }
-    },
-    on() {},
-    off() {},
-    close() {},
-};
+let socket;
 
 const noSocketIOPages = [
     /^\/status-page$/, //  /status-page
@@ -96,105 +82,225 @@ export default {
          * are on a status page be bypassed?
          * @returns {void}
          */
-        initSocketIO() {
+        initSocketIO(bypass = false) {
+            // No need to re-init
             if (this.socket.initedSocketIO) {
                 return;
             }
+
+            // No need to connect to the socket.io for status page
+            if (!bypass && location.pathname) {
+                for (let page of noSocketIOPages) {
+                    if (location.pathname.match(page)) {
+                        return;
+                    }
+                }
+            }
+
+            // Also don't need to connect to the socket.io for setup database page
+            if (location.pathname === "/setup-database") {
+                return;
+            }
+
             this.socket.initedSocketIO = true;
 
-            // Authentication is outside this port's slice, so the interface is handed the
-            // logged-in state it would otherwise wait for a server to grant.
-            this.loggedIn = true;
-            this.allowLoginDialog = false;
-            this.username = "local";
-            // The interface parses this as a semver and compares it against its own build's, so
-            // it is the version of uptime-kuma this interface is a copy of. Reporting anything
-            // else raises a version-mismatch banner about a comparison that has no meaning here.
-            this.info = { version: "2.5.3", latestVersion: "2.5.3", primaryBaseURL: null, serverTimezone: dayjs.tz.guess(), serverTimezoneOffset: dayjs().format("Z") };
+            let protocol = location.protocol + "//";
 
-            akkaFeed({
-                onMonitors: (monitors) => {
-                    this.assignMonitorUrlParser(monitors);
-                    this.monitorList = monitors;
-                },
-                onHistory: (beat) => {
-                    this.recordBeat(beat);
-                    // The events table is filled two ways, and a beat must reach it by
-                    // exactly one of them: a screen already open is told, and a screen
-                    // opened later reads what is held. The stand-in answers that read
-                    // synchronously, so a beat cannot be counted by both.
-                    if (beat.important) {
-                        this.emitter.emit("newImportantHeartbeat", beat);
-                    }
-                },
-                onBeat: (beat) => {
-                    this.recordBeat(beat);
+            let url;
+            const env = process.env.NODE_ENV || "production";
+            if (env === "development" && isDevContainer()) {
+                url = protocol + getDevContainerServerHostname();
+            } else if (env === "development" || localStorage.dev === "dev") {
+                url = protocol + location.hostname + ":3001";
+            } else {
+                // Connect to the current url
+                url = undefined;
+            }
 
-                    if (beat.important) {
-                        const monitor = this.monitorList[beat.monitorID];
-                        if (monitor !== undefined) {
-                            if (beat.status === 0) {
-                                toast.error(`[${monitor.name}] [DOWN] ${beat.msg}`, { timeout: getToastErrorTimeout() });
-                            } else if (beat.status === 1) {
-                                toast.success(`[${monitor.name}] [Up] ${beat.msg}`, { timeout: getToastSuccessTimeout() });
-                            } else {
-                                toast(`[${monitor.name}] ${beat.msg}`);
-                            }
-                        }
-                        this.emitter.emit("newImportantHeartbeat", beat);
-                    }
-                },
-                onConnected: () => {
-                    this.socket.connected = true;
-                    this.socket.connectCount++;
-                    this.socket.firstConnect = false;
-                    this.showReverseProxyGuide = false;
-                },
-                onDisconnected: () => {
-                    this.socket.connected = false;
-                    this.connectionErrorMsg = `${this.$t("Lost connection to the socket server.")} ${this.$t("Reconnecting...")}`;
-                },
+            // The transport is the whole of what this port replaces: the same three members,
+            // so every handler below is the original's.
+            socket = akkaSocket(url);
+
+            socket.on("info", (info) => {
+                this.info = info;
             });
-        },
 
-        /**
-         * Hold one beat against its monitor, keeping the same window the source keeps.
-         * @param {object} beat Heartbeat in uptime-kuma's own shape
-         * @returns {void}
-         */
-        recordBeat(beat) {
-            if (!(beat.monitorID in this.heartbeatList)) {
-                this.heartbeatList[beat.monitorID] = [];
-            }
-            this.heartbeatList[beat.monitorID].push(beat);
-            if (this.heartbeatList[beat.monitorID].length >= 150) {
-                this.heartbeatList[beat.monitorID].shift();
-            }
-            this.recomputeDerived(beat.monitorID);
-        },
+            socket.on("setup", (monitorID, data) => {
+                this.$router.push("/setup");
+            });
 
-        /**
-         * Uptime and average ping for one monitor, from the beats already held.
-         *
-         * The source computes both server-side and pushes them as their own messages. This
-         * port's feed carries heartbeats only, so the two are derived here from the same
-         * beats the bars are drawn from — which is why an uptime figure covers the retained
-         * window rather than the monitor's whole life. Declared in the README.
-         * @param {number|string} monitorID Monitor the beats belong to
-         * @returns {void}
-         */
-        recomputeDerived(monitorID) {
-            const beats = this.heartbeatList[monitorID] || [];
-            const counted = beats.filter((b) => b.status === 0 || b.status === 1);
-            const up = counted.filter((b) => b.status === 1).length;
-            const ratio = counted.length ? up / counted.length : 0;
-            for (const period of [ "24", "720", "1y" ]) {
-                this.uptimeList[`${monitorID}_${period}`] = ratio;
-            }
-            const pings = beats.map((b) => b.ping).filter((p) => typeof p === "number");
-            this.avgPingList[monitorID] = pings.length
-                ? Math.round(pings.reduce((a, b) => a + b, 0) / pings.length)
-                : null;
+            socket.on("autoLogin", (monitorID, data) => {
+                this.loggedIn = true;
+                this.storage().token = "autoLogin";
+                this.socket.token = "autoLogin";
+                this.allowLoginDialog = false;
+            });
+
+            socket.on("loginRequired", () => {
+                let token = this.storage().token;
+                if (token && token !== "autoLogin") {
+                    this.loginByToken(token);
+                } else {
+                    this.$root.storage().removeItem("token");
+                    this.allowLoginDialog = true;
+                }
+            });
+
+            socket.on("monitorList", (data) => {
+                this.assignMonitorUrlParser(data);
+                this.monitorList = data;
+            });
+
+            socket.on("updateMonitorIntoList", (data) => {
+                this.assignMonitorUrlParser(data);
+                Object.entries(data).forEach(([monitorID, updatedMonitor]) => {
+                    this.monitorList[monitorID] = updatedMonitor;
+                });
+            });
+
+            socket.on("deleteMonitorFromList", (monitorID) => {
+                if (this.monitorList[monitorID]) {
+                    delete this.monitorList[monitorID];
+                }
+            });
+
+            socket.on("monitorTypeList", (data) => {
+                this.monitorTypeList = data;
+            });
+
+            socket.on("maintenanceList", (data) => {
+                this.maintenanceList = data;
+            });
+
+            socket.on("apiKeyList", (data) => {
+                this.apiKeyList = data;
+            });
+
+            socket.on("notificationList", (data) => {
+                this.notificationList = data;
+            });
+
+            socket.on("statusPageList", (data) => {
+                this.statusPageListLoaded = true;
+                this.statusPageList = data;
+            });
+
+            socket.on("proxyList", (data) => {
+                this.proxyList = data.map((item) => {
+                    item.auth = !!item.auth;
+                    item.active = !!item.active;
+                    item.default = !!item.default;
+
+                    return item;
+                });
+            });
+
+            socket.on("dockerHostList", (data) => {
+                this.dockerHostList = data;
+            });
+
+            socket.on("remoteBrowserList", (data) => {
+                this.remoteBrowserList = data;
+            });
+
+            socket.on("heartbeat", (data) => {
+                if (!(data.monitorID in this.heartbeatList)) {
+                    this.heartbeatList[data.monitorID] = [];
+                }
+
+                this.heartbeatList[data.monitorID].push(data);
+
+                if (this.heartbeatList[data.monitorID].length >= 150) {
+                    this.heartbeatList[data.monitorID].shift();
+                }
+
+                // Add to important list if it is important
+                // Also toast
+                if (data.important) {
+                    if (this.monitorList[data.monitorID] !== undefined) {
+                        if (data.status === 0) {
+                            toast.error(`[${this.monitorList[data.monitorID].name}] [DOWN] ${data.msg}`, {
+                                timeout: getToastErrorTimeout(),
+                            });
+                        } else if (data.status === 1) {
+                            toast.success(`[${this.monitorList[data.monitorID].name}] [Up] ${data.msg}`, {
+                                timeout: getToastSuccessTimeout(),
+                            });
+                        } else {
+                            toast(`[${this.monitorList[data.monitorID].name}] ${data.msg}`);
+                        }
+                    }
+
+                    this.emitter.emit("newImportantHeartbeat", data);
+                }
+            });
+
+            socket.on("heartbeatList", (monitorID, data, overwrite = false) => {
+                if (!(monitorID in this.heartbeatList) || overwrite) {
+                    this.heartbeatList[monitorID] = data;
+                } else {
+                    this.heartbeatList[monitorID] = data.concat(this.heartbeatList[monitorID]);
+                }
+            });
+
+            socket.on("avgPing", (monitorID, data) => {
+                this.avgPingList[monitorID] = data;
+            });
+
+            socket.on("uptime", (monitorID, type, data) => {
+                this.uptimeList[`${monitorID}_${type}`] = data;
+            });
+
+            socket.on("certInfo", (monitorID, data) => {
+                this.tlsInfoList[monitorID] = JSON.parse(data);
+            });
+
+            socket.on("domainInfo", (monitorID, daysRemaining, expiresOn) => {
+                this.domainInfoList[monitorID] = { daysRemaining: daysRemaining, expiresOn: expiresOn };
+            });
+
+            socket.on("connect_error", (err) => {
+                console.error(`Failed to connect to the backend. Socket.io connect_error: ${err.message}`);
+                this.connectionErrorMsg = `${this.$t("Cannot connect to the socket server.")} [${err}] ${this.$t("Reconnecting...")}`;
+                this.showReverseProxyGuide = true;
+                this.socket.connected = false;
+                this.socket.firstConnect = false;
+            });
+
+            socket.on("disconnect", () => {
+                console.log("disconnect");
+                this.connectionErrorMsg = `${this.$t("Lost connection to the socket server.")} ${this.$t("Reconnecting...")}`;
+                this.socket.connected = false;
+            });
+
+            socket.on("connect", () => {
+                console.log("Connected to the socket server");
+                this.socket.connectCount++;
+                this.socket.connected = true;
+                this.showReverseProxyGuide = false;
+
+                // Reset Heartbeat list if it is re-connect
+                if (this.socket.connectCount >= 2) {
+                    this.clearData();
+                }
+
+                this.socket.firstConnect = false;
+            });
+
+            // cloudflared
+            socket.on("cloudflared_installed", (res) => (this.cloudflared.installed = res));
+            socket.on("cloudflared_running", (res) => (this.cloudflared.running = res));
+            socket.on("cloudflared_message", (res) => (this.cloudflared.message = res));
+            socket.on("cloudflared_errorMessage", (res) => (this.cloudflared.errorMessage = res));
+            socket.on("cloudflared_token", (res) => (this.cloudflared.cloudflareTunnelToken = res));
+
+            socket.on("initServerTimezone", () => {
+                socket.emit("initServerTimezone", dayjs.tz.guess());
+            });
+
+            socket.on("refresh", () => {
+                location.reload();
+            });
         },
         /**
          * parse all urls from list.
@@ -240,29 +346,7 @@ export default {
          * @returns {Socket} Current socket
          */
         getSocket() {
-            // The important-events table is this slice's own state — a beat is important or
-            // it is not — so it is served from the beats already held rather than refused.
-            // Everything else falls through to the stand-in.
-            const held = this.heartbeatList;
-            return {
-                ...socket,
-                emit: (event, ...args) => {
-                    const callback = args[args.length - 1];
-                    const important = () =>
-                        Object.values(held)
-                            .flat()
-                            .filter((b) => b.important)
-                            .sort((a, b) => (a.time < b.time ? 1 : -1));
-                    if (event === "monitorImportantHeartbeatListCount") {
-                        callback({ ok: true, count: important().length });
-                    } else if (event === "monitorImportantHeartbeatListPaged") {
-                        const [ , offset, count ] = args;
-                        callback({ ok: true, data: important().slice(offset, offset + count) });
-                    } else {
-                        socket.emit(event, ...args);
-                    }
-                },
-            };
+            return socket;
         },
 
         /**

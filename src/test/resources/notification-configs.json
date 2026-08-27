@@ -1,0 +1,966 @@
+{
+ "Whatsapp360messenger": {
+  "name": "Whatsapp360messenger target",
+  "type": "Whatsapp360messenger",
+  "isDefault": false,
+  "Whatsapp360messengerAuthToken": "Whatsapp360messengerAuthToken-value",
+  "Whatsapp360messengerUseTemplate": false,
+  "Whatsapp360messengerTemplate": "{{ name }} is {{ status }}",
+  "Whatsapp360messengerRecipient": "+15550100",
+  "Whatsapp360messengerGroupIds": "Whatsapp360messengerGroupIds-value",
+  "Whatsapp360messengerGroupId": "Whatsapp360messengerGroupId-value"
+ },
+ "Elks": {
+  "name": "Elks target",
+  "type": "Elks",
+  "isDefault": false,
+  "elksFromNumber": "+15550100",
+  "elksToNumber": "+15550100",
+  "elksUsername": "elksUsername-value",
+  "elksAuthToken": "elksAuthToken-value"
+ },
+ "alerta": {
+  "name": "alerta target",
+  "type": "alerta",
+  "isDefault": false,
+  "alertaApiKey": "alertaApiKey-value",
+  "alertaEnvironment": "alertaEnvironment-value",
+  "alertaApiEndpoint": "https://example.invalid/hook",
+  "alertaAlertState": "alertaAlertState-value",
+  "alertaRecoverState": "alertaRecoverState-value"
+ },
+ "AlertNow": {
+  "name": "AlertNow target",
+  "type": "AlertNow",
+  "isDefault": false,
+  "alertNowWebhookURL": "https://example.invalid/hook"
+ },
+ "AliyunSMS": {
+  "name": "AliyunSMS target",
+  "type": "AliyunSMS",
+  "isDefault": false,
+  "optionalParameters": "optionalParameters-value",
+  "phonenumber": "+15550100",
+  "templateCode": "templateCode-value",
+  "signName": "signName-value",
+  "accessKeyId": "accessKeyId-value",
+  "secretAccessKey": "secretAccessKey-value"
+ },
+ "apprise": {
+  "name": "apprise target",
+  "type": "apprise",
+  "isDefault": false,
+  "appriseURL": "https://example.invalid/hook",
+  "title": "title-value"
+ },
+ "bale": {
+  "name": "bale target",
+  "type": "bale",
+  "isDefault": false,
+  "baleBotToken": "baleBotToken-value",
+  "baleChatID": "baleChatID-value"
+ },
+ "Bark": {
+  "name": "Bark target",
+  "type": "Bark",
+  "isDefault": false,
+  "barkEndpoint": "https://example.invalid/hook",
+  "barkGroup": "barkGroup-value",
+  "barkSound": "barkSound-value",
+  "apiVersion": "v2"
+ },
+ "bearsms": {
+  "name": "bearsms target",
+  "type": "bearsms",
+  "isDefault": false,
+  "bearsmsUsername": "bearsmsUsername-value",
+  "bearsmsHashKey": "bearsmsHashKey-value",
+  "bearsmsPhoneNumber": "+15550100",
+  "bearsmsSenderId": "bearsmsSenderId-value"
+ },
+ "Bitrix24": {
+  "name": "Bitrix24 target",
+  "type": "Bitrix24",
+  "isDefault": false,
+  "bitrix24UserID": "bitrix24UserID-value",
+  "bitrix24WebhookURL": "https://example.invalid/hook"
+ },
+ "Brevo": {
+  "name": "Brevo target",
+  "type": "Brevo",
+  "isDefault": false,
+  "brevoApiKey": "brevoApiKey-value",
+  "brevoToEmail": "alerts@example.invalid",
+  "brevoFromEmail": "alerts@example.invalid",
+  "brevoFromName": "brevoFromName-value",
+  "brevoSubject": "brevoSubject-value",
+  "brevoCcEmail": "alerts@example.invalid",
+  "brevoBccEmail": "alerts@example.invalid"
+ },
+ "CallMeBot": {
+  "name": "CallMeBot target",
+  "type": "CallMeBot",
+  "isDefault": false,
+  "callMeBotEndpoint": "https://example.invalid/hook"
+ },
+ "Cellsynt": {
+  "name": "Cellsynt target",
+  "type": "Cellsynt",
+  "isDefault": false,
+  "cellsyntLogin": "cellsyntLogin-value",
+  "cellsyntPassword": "cellsyntPassword-value",
+  "cellsyntDestination": "cellsyntDestination-value",
+  "cellsyntOriginatortype": "text",
+  "cellsyntOriginator": "cellsyntOriginator-value",
+  "cellsyntAllowLongSMS": false
+ },
+ "clicksendsms": {
+  "name": "clicksendsms target",
+  "type": "clicksendsms",
+  "isDefault": false,
+  "clicksendsmsLogin": "clicksendsmsLogin-value",
+  "clicksendsmsPassword": "clicksendsmsPassword-value",
+  "clicksendsmsToNumber": "+15550100",
+  "clicksendsmsSenderName": "clicksendsmsSenderName-value"
+ },
+ "ClickUp": {
+  "name": "ClickUp target",
+  "type": "ClickUp",
+  "isDefault": false,
+  "clickupToken": "clickupToken-value",
+  "clickupDisableUrl": "https://example.invalid/hook",
+  "clickupWorkspaceId": "clickupWorkspaceId-value",
+  "clickupChannelId": "clickupChannelId-value"
+ },
+ "DingDing": {
+  "name": "DingDing target",
+  "type": "DingDing",
+  "isDefault": false,
+  "mentioning": "everyone",
+  "mobileList": "+15550100",
+  "userList": "userList-value",
+  "webHookUrl": "https://example.invalid/hook?access_token=x",
+  "secretKey": "secretKey-value"
+ },
+ "discord": {
+  "name": "discord target",
+  "type": "discord",
+  "isDefault": false,
+  "discordUsername": "discordUsername-value",
+  "discordWebhookUrl": "https://example.invalid/hook",
+  "discordChannelType": "text",
+  "threadId": "threadId-value",
+  "discordMessageFormat": "plain",
+  "discordUseMessageTemplate": "{{ name }} is {{ status }}",
+  "discordMessageTemplate": "{{ name }} is {{ status }}",
+  "postName": "postName-value",
+  "discordSuppressNotifications": "discordSuppressNotifications-value",
+  "disableUrl": "https://example.invalid/hook",
+  "discordPrefixMessage": "discordPrefixMessage-value"
+ },
+ "egosms": {
+  "name": "egosms target",
+  "type": "egosms",
+  "isDefault": false,
+  "egosmsPhoneNumber": "+15550100",
+  "egosmsUsername": "egosmsUsername-value",
+  "egosmsPassword": "egosmsPassword-value",
+  "egosmsSender": "egosmsSender-value"
+ },
+ "evolution": {
+  "name": "evolution target",
+  "type": "evolution",
+  "isDefault": false,
+  "evolutionAuthToken": "evolutionAuthToken-value",
+  "evolutionCustomMessage": "{{ name }} is {{ status }}",
+  "evolutionUseCustomMessage": "{{ name }} is {{ status }}",
+  "evolutionRecipient": "+15550100",
+  "evolutionApiUrl": "https://example.invalid/hook",
+  "evolutionInstanceName": "evolutionInstanceName-value"
+ },
+ "Feishu": {
+  "name": "Feishu target",
+  "type": "Feishu",
+  "isDefault": false,
+  "feishuWebHookUrl": "https://example.invalid/hook"
+ },
+ "FlashDuty": {
+  "name": "FlashDuty target",
+  "type": "FlashDuty",
+  "isDefault": false,
+  "flashdutySeverity": "1",
+  "flashdutyIntegrationKey": "flashdutyIntegrationKey-value"
+ },
+ "Flowtriq": {
+  "name": "Flowtriq target",
+  "type": "Flowtriq",
+  "isDefault": false,
+  "flowtriqApiKey": "flowtriqApiKey-value",
+  "flowtriqWebhookUrl": "https://example.invalid/hook"
+ },
+ "fluxer": {
+  "name": "fluxer target",
+  "type": "fluxer",
+  "isDefault": false,
+  "fluxerUsername": "fluxerUsername-value",
+  "fluxerWebhookUrl": "https://example.invalid/hook",
+  "fluxerMessageFormat": "plain",
+  "fluxerUseMessageTemplate": "{{ name }} is {{ status }}",
+  "fluxerMessageTemplate": "{{ name }} is {{ status }}",
+  "disableUrl": "https://example.invalid/hook",
+  "fluxerPrefixMessage": "fluxerPrefixMessage-value"
+ },
+ "FreeMobile": {
+  "name": "FreeMobile target",
+  "type": "FreeMobile",
+  "isDefault": false,
+  "freemobileUser": "+15550100",
+  "freemobilePass": "+15550100"
+ },
+ "GoAlert": {
+  "name": "GoAlert target",
+  "type": "GoAlert",
+  "isDefault": false,
+  "goAlertBaseURL": "https://example.invalid/hook",
+  "goAlertToken": "goAlertToken-value"
+ },
+ "GoogleChat": {
+  "name": "GoogleChat target",
+  "type": "GoogleChat",
+  "isDefault": false,
+  "googleChatMaxRetries": "googleChatMaxRetries-value",
+  "googleChatUseTemplate": false,
+  "googleChatTemplate": "{{ name }} is {{ status }}",
+  "googleChatWebhookURL": "https://example.invalid/hook"
+ },
+ "GoogleSheets": {
+  "name": "GoogleSheets target",
+  "type": "GoogleSheets",
+  "isDefault": false,
+  "googleSheetsWebhookUrl": "https://example.invalid/hook"
+ },
+ "gorush": {
+  "name": "gorush target",
+  "type": "gorush",
+  "isDefault": false,
+  "gorushDeviceToken": "gorushDeviceToken-value",
+  "gorushPlatform": "android",
+  "gorushTitle": "gorushTitle-value",
+  "gorushPriority": "1",
+  "gorushRetry": "1",
+  "gorushTopic": "gorushTopic-value",
+  "gorushServerURL": "https://example.invalid/hook"
+ },
+ "gotify": {
+  "name": "gotify target",
+  "type": "gotify",
+  "isDefault": false,
+  "gotifyserverurl": "https://example.invalid/hook",
+  "gotifyapplicationToken": "gotifyapplicationToken-value",
+  "gotifyPriority": "1"
+ },
+ "GrafanaOncall": {
+  "name": "GrafanaOncall target",
+  "type": "GrafanaOncall",
+  "isDefault": false,
+  "GrafanaOncallURL": "https://example.invalid/hook"
+ },
+ "gtxmessaging": {
+  "name": "gtxmessaging target",
+  "type": "gtxmessaging",
+  "isDefault": false,
+  "gtxMessagingFrom": "gtxMessagingFrom-value",
+  "gtxMessagingTo": "+15550100",
+  "gtxMessagingApiKey": "gtxMessagingApiKey-value"
+ },
+ "HaloPSA": {
+  "name": "HaloPSA target",
+  "type": "HaloPSA",
+  "isDefault": false,
+  "haloUsername": "haloUsername-value",
+  "haloPassword": "haloPassword-value",
+  "halowebhookurl": "https://example.invalid/hook"
+ },
+ "HeiiOnCall": {
+  "name": "HeiiOnCall target",
+  "type": "HeiiOnCall",
+  "isDefault": false,
+  "heiiOnCallApiKey": "heiiOnCallApiKey-value",
+  "heiiOnCallTriggerId": "heiiOnCallTriggerId-value"
+ },
+ "HomeAssistant": {
+  "name": "HomeAssistant target",
+  "type": "HomeAssistant",
+  "isDefault": false,
+  "longLivedAccessToken": "longLivedAccessToken-value",
+  "homeAssistantUrl": "https://example.invalid/hook"
+ },
+ "JiraServiceManagement": {
+  "name": "JiraServiceManagement target",
+  "type": "JiraServiceManagement",
+  "isDefault": false,
+  "jsmPriority": "1",
+  "jsmCloudId": "jsmCloudId-value",
+  "jsmEmail": "alerts@example.invalid",
+  "jsmApiToken": "jsmApiToken-value"
+ },
+ "Keep": {
+  "name": "Keep target",
+  "type": "Keep",
+  "isDefault": false,
+  "webhookAPIKey": "webhookAPIKey-value",
+  "webhookURL": "https://example.invalid/hook"
+ },
+ "Kook": {
+  "name": "Kook target",
+  "type": "Kook",
+  "isDefault": false,
+  "kookGuildID": "kookGuildID-value",
+  "kookBotToken": "kookBotToken-value"
+ },
+ "line": {
+  "name": "line target",
+  "type": "line",
+  "isDefault": false,
+  "lineChannelAccessToken": "lineChannelAccessToken-value",
+  "lineUserID": "lineUserID-value"
+ },
+ "lunasea": {
+  "name": "lunasea target",
+  "type": "lunasea",
+  "isDefault": false,
+  "lunaseaTarget": "user",
+  "lunaseaUserID": "lunaseaUserID-value",
+  "lunaseaDevice": "lunaseaDevice-value"
+ },
+ "matrix": {
+  "name": "matrix target",
+  "type": "matrix",
+  "isDefault": false,
+  "internalRoomId": "internalRoomId-value",
+  "accessToken": "accessToken-value",
+  "matrixUseTemplate": false,
+  "matrixTemplate": "{{ name }} is {{ status }}",
+  "homeserverUrl": "https://example.invalid/hook"
+ },
+ "mattermost": {
+  "name": "mattermost target",
+  "type": "mattermost",
+  "isDefault": false,
+  "mattermostusername": "mattermostusername-value",
+  "mattermostWebhookUrl": "https://example.invalid/hook",
+  "mattermostchannel": "mattermostchannel-value",
+  "mattermosticonemo": "mattermosticonemo-value",
+  "mattermosticonurl": "https://example.invalid/hook"
+ },
+ "max": {
+  "name": "max target",
+  "type": "max",
+  "isDefault": false,
+  "maxApiUrl": "https://example.invalid/hook",
+  "maxChatID": "maxChatID-value",
+  "maxBotToken": "maxBotToken-value",
+  "maxUseTemplate": false,
+  "maxTemplate": "{{ name }} is {{ status }}",
+  "maxTemplateFormat": "plain"
+ },
+ "Milky": {
+  "name": "Milky target",
+  "type": "Milky",
+  "isDefault": false,
+  "httpAddr": "httpAddr-value",
+  "msgType": "private",
+  "accessToken": "accessToken-value",
+  "recieverId": "recieverId-value"
+ },
+ "nextcloudtalk": {
+  "name": "nextcloudtalk target",
+  "type": "nextcloudtalk",
+  "isDefault": false,
+  "botSecret": "botSecret-value",
+  "sendSilentUp": false,
+  "sendSilentDown": false,
+  "host": "smtp.example.invalid",
+  "conversationToken": "conversationToken-value"
+ },
+ "nostr": {
+  "name": "nostr target",
+  "type": "nostr",
+  "isDefault": false,
+  "sender": "sender-value",
+  "recipients": "+15550100",
+  "relays": "relays-value"
+ },
+ "notifery": {
+  "name": "notifery target",
+  "type": "notifery",
+  "isDefault": false,
+  "notiferyTitle": "notiferyTitle-value",
+  "notiferyGroup": "notiferyGroup-value",
+  "notiferyApiKey": "notiferyApiKey-value"
+ },
+ "ntfy": {
+  "name": "ntfy target",
+  "type": "ntfy",
+  "isDefault": false,
+  "ntfyAuthenticationMethod": "ntfyAuthenticationMethod-value",
+  "ntfyusername": "ntfyusername-value",
+  "ntfypassword": "ntfypassword-value",
+  "ntfyaccesstoken": "ntfyaccesstoken-value",
+  "ntfyCall": "ntfyCall-value",
+  "ntfytopic": "ntfytopic-value",
+  "ntfyUseTemplate": false,
+  "ntfyCustomTitle": "{{ name }} is {{ status }}",
+  "ntfyCustomMessage": "{{ name }} is {{ status }}",
+  "ntfyPriority": "1",
+  "ntfyserverurl": "https://example.invalid/hook",
+  "ntfyPriorityDown": "1",
+  "ntfyIcon": "ntfyIcon-value"
+ },
+ "octopush": {
+  "name": "octopush target",
+  "type": "octopush",
+  "isDefault": false,
+  "octopushVersion": "2",
+  "octopushAPIKey": "octopushAPIKey-value",
+  "octopushLogin": "octopushLogin-value",
+  "octopushPhoneNumber": "+15550100",
+  "octopushSMSType": "text",
+  "octopushSenderName": "octopushSenderName-value",
+  "octopushDMLogin": "octopushDMLogin-value",
+  "octopushDMAPIKey": "octopushDMAPIKey-value",
+  "octopushDMPhoneNumber": "+15550100",
+  "octopushDMSenderName": "octopushDMSenderName-value",
+  "octopushDMSMSType": "text"
+ },
+ "OneBot": {
+  "name": "OneBot target",
+  "type": "OneBot",
+  "isDefault": false,
+  "httpAddr": "httpAddr-value",
+  "accessToken": "accessToken-value",
+  "msgType": "private",
+  "recieverId": "recieverId-value"
+ },
+ "OneChat": {
+  "name": "OneChat target",
+  "type": "OneChat",
+  "isDefault": false,
+  "accessToken": "accessToken-value",
+  "recieverId": "recieverId-value",
+  "botId": "botId-value"
+ },
+ "Onesender": {
+  "name": "Onesender target",
+  "type": "Onesender",
+  "isDefault": false,
+  "onesenderReceiver": "+15550100",
+  "onesenderTypeReceiver": "private",
+  "onesenderToken": "onesenderToken-value",
+  "onesenderURL": "https://example.invalid/hook"
+ },
+ "Ooredoo": {
+  "name": "Ooredoo target",
+  "type": "Ooredoo",
+  "isDefault": false,
+  "ooredooServerUrl": "https://example.invalid/hook",
+  "ooredooToNumber": "9991234",
+  "ooredooBearerToken": "ooredooBearerToken-value",
+  "ooredooUsername": "ooredooUsername-value",
+  "ooredooAccessKey": "ooredooAccessKey-value"
+ },
+ "openwa": {
+  "name": "openwa target",
+  "type": "openwa",
+  "isDefault": false,
+  "openwaCustomMessage": "{{ name }} is {{ status }}",
+  "openwaUseCustomMessage": "{{ name }} is {{ status }}",
+  "openwaApiKey": "openwaApiKey-value",
+  "openwaChatId": "123@c.us",
+  "openwaApiUrl": "https://example.invalid/hook",
+  "openwaSession": "openwaSession-value"
+ },
+ "Opsgenie": {
+  "name": "Opsgenie target",
+  "type": "Opsgenie",
+  "isDefault": false,
+  "opsgeniePriority": "1",
+  "opsgenieRegion": "us",
+  "opsgenieApiKey": "opsgenieApiKey-value"
+ },
+ "PagerDuty": {
+  "name": "PagerDuty target",
+  "type": "PagerDuty",
+  "isDefault": false,
+  "pagerdutyAutoResolve": "resolve",
+  "pagerdutyIntegrationUrl": "https://example.invalid/hook",
+  "pagerdutyPriority": "1",
+  "pagerdutyIntegrationKey": "pagerdutyIntegrationKey-value"
+ },
+ "PagerTree": {
+  "name": "PagerTree target",
+  "type": "PagerTree",
+  "isDefault": false,
+  "pagertreeAutoResolve": "resolve",
+  "pagertreeIntegrationUrl": "https://example.invalid/hook",
+  "pagertreeUrgency": "pagertreeUrgency-value"
+ },
+ "pinglet": {
+  "name": "pinglet target",
+  "type": "pinglet",
+  "isDefault": false,
+  "pingletPublishUrl": "https://example.invalid/hook",
+  "pingletApiKey": "pingletApiKey-value"
+ },
+ "plivo": {
+  "name": "plivo target",
+  "type": "plivo",
+  "isDefault": false,
+  "plivoAuthID": "plivoAuthID-value",
+  "plivoAuthToken": "plivoAuthToken-value",
+  "plivoMessageType": "text",
+  "plivoAnswerUrl": "https://example.invalid/hook",
+  "plivoFromNumber": "+15550100",
+  "plivoToNumber": "+15550100"
+ },
+ "promosms": {
+  "name": "promosms target",
+  "type": "promosms",
+  "isDefault": false,
+  "promosmsAllowLongSMS": false,
+  "promosmsLogin": "promosmsLogin-value",
+  "promosmsPassword": "promosmsPassword-value",
+  "promosmsPhoneNumber": "+15550100",
+  "promosmsSMSType": "text",
+  "promosmsSenderName": "promosmsSenderName-value"
+ },
+ "pumble": {
+  "name": "pumble target",
+  "type": "pumble",
+  "isDefault": false,
+  "webhookURL": "https://example.invalid/hook"
+ },
+ "pushbullet": {
+  "name": "pushbullet target",
+  "type": "pushbullet",
+  "isDefault": false,
+  "pushbulletAccessToken": "pushbulletAccessToken-value"
+ },
+ "PushDeer": {
+  "name": "PushDeer target",
+  "type": "PushDeer",
+  "isDefault": false,
+  "pushdeerServer": "pushdeerServer-value",
+  "pushdeerKey": "pushdeerKey-value"
+ },
+ "pushover": {
+  "name": "pushover target",
+  "type": "pushover",
+  "isDefault": false,
+  "pushoveruserkey": "pushoveruserkey-value",
+  "pushoverapptoken": "pushoverapptoken-value",
+  "pushoversounds": "pushoversounds-value",
+  "pushoverpriority": "1",
+  "pushovertitle": "pushovertitle-value",
+  "pushoverdevice": "pushoverdevice-value",
+  "pushoverttl": "1",
+  "pushoversounds_up": "pushoversounds_up-value"
+ },
+ "PushPlus": {
+  "name": "PushPlus target",
+  "type": "PushPlus",
+  "isDefault": false,
+  "pushPlusSendKey": "pushPlusSendKey-value"
+ },
+ "pushy": {
+  "name": "pushy target",
+  "type": "pushy",
+  "isDefault": false,
+  "pushyAPIKey": "pushyAPIKey-value",
+  "pushyToken": "pushyToken-value"
+ },
+ "Resend": {
+  "name": "Resend target",
+  "type": "Resend",
+  "isDefault": false,
+  "resendApiKey": "resendApiKey-value",
+  "resendFromEmail": "alerts@example.invalid",
+  "resendFromName": "resendFromName-value",
+  "resendToEmail": "alerts@example.invalid",
+  "resendSubject": "resendSubject-value"
+ },
+ "rocket.chat": {
+  "name": "rocket.chat target",
+  "type": "rocket.chat",
+  "isDefault": false,
+  "rocketchannel": "rocketchannel-value",
+  "rocketusername": "rocketusername-value",
+  "rocketiconemo": "rocketiconemo-value",
+  "rocketwebhookURL": "https://example.invalid/hook",
+  "rocketbutton": "rocketbutton-value"
+ },
+ "SendGrid": {
+  "name": "SendGrid target",
+  "type": "SendGrid",
+  "isDefault": false,
+  "sendgridApiKey": "sendgridApiKey-value",
+  "sendgridToEmail": "alerts@example.invalid",
+  "sendgridCcEmail": "alerts@example.invalid",
+  "sendgridBccEmail": "alerts@example.invalid",
+  "sendgridFromEmail": "alerts@example.invalid",
+  "sendgridSubject": "sendgridSubject-value"
+ },
+ "ServerChan": {
+  "name": "ServerChan target",
+  "type": "ServerChan",
+  "isDefault": false,
+  "serverChanSendKey": "serverChanSendKey-value"
+ },
+ "serwersms": {
+  "name": "serwersms target",
+  "type": "serwersms",
+  "isDefault": false,
+  "serwersmsUsername": "serwersmsUsername-value",
+  "serwersmsPassword": "serwersmsPassword-value",
+  "serwersmsSenderName": "serwersmsSenderName-value",
+  "serwersmsRecipientType": "phone",
+  "serwersmsGroupId": "serwersmsGroupId-value",
+  "serwersmsPhoneNumber": "+15550100"
+ },
+ "SevenIO": {
+  "name": "SevenIO target",
+  "type": "SevenIO",
+  "isDefault": false,
+  "sevenioReceiver": "+15550100",
+  "sevenioSender": "sevenioSender-value",
+  "sevenioApiKey": "sevenioApiKey-value"
+ },
+ "signal": {
+  "name": "signal target",
+  "type": "signal",
+  "isDefault": false,
+  "signalUseTemplate": false,
+  "signalTemplate": "{{ name }} is {{ status }}",
+  "signalNumber": "+15550100",
+  "signalRecipients": "+15550100",
+  "signalURL": "https://example.invalid/hook"
+ },
+ "SIGNL4": {
+  "name": "SIGNL4 target",
+  "type": "SIGNL4",
+  "isDefault": false,
+  "webhookURL": "https://example.invalid/hook"
+ },
+ "slack": {
+  "name": "slack target",
+  "type": "slack",
+  "isDefault": false,
+  "slackbutton": "slackbutton-value",
+  "slackchannelnotify": false,
+  "slackchannel": "slackchannel-value",
+  "slackusername": "slackusername-value",
+  "slackiconemo": "slackiconemo-value",
+  "slackwebhookURL": "https://example.invalid/hook",
+  "slackUseTemplate": false,
+  "slackTemplate": "{{ name }} is {{ status }}",
+  "slackIncludeGroupName": "slackIncludeGroupName-value",
+  "slackrichmessage": false
+ },
+ "SMSGateway": {
+  "name": "SMSGateway target",
+  "type": "SMSGateway",
+  "isDefault": false,
+  "smsgatewayUrl": "https://example.invalid/hook",
+  "smsgatewayTo": "+15550100",
+  "smsgatewayApiKey": "smsgatewayApiKey-value"
+ },
+ "SMSPlanet": {
+  "name": "SMSPlanet target",
+  "type": "SMSPlanet",
+  "isDefault": false,
+  "smsplanetApiToken": "smsplanetApiToken-value",
+  "smsplanetSenderName": "smsplanetSenderName-value",
+  "smsplanetPhoneNumbers": "+15550100"
+ },
+ "smsc": {
+  "name": "smsc target",
+  "type": "smsc",
+  "isDefault": false,
+  "smscTranslit": "smscTranslit-value",
+  "smscLogin": "smscLogin-value",
+  "smscPassword": "smscPassword-value",
+  "smscToNumber": "+15550100",
+  "smscSenderName": "kuma"
+ },
+ "SMSEagle": {
+  "name": "SMSEagle target",
+  "type": "SMSEagle",
+  "isDefault": false,
+  "smseagleApiType": "smseagle-apiv2",
+  "smseagleRecipientType": "+15550100",
+  "smseagleMsgType": "smseagle-sms",
+  "smseagleDuration": "1",
+  "smseagleTtsModel": "1",
+  "smseagleUrl": "https://example.invalid/hook",
+  "smseagleToken": "smseagleToken-value",
+  "smseagleRecipient": "+15550100",
+  "smseagleEncoding": "smseagleEncoding-value",
+  "smseaglePriority": "1",
+  "smseagleRecipientContact": "+15550100",
+  "smseagleRecipientGroup": "+15550100",
+  "smseagleRecipientTo": "+15550100"
+ },
+ "smsir": {
+  "name": "smsir target",
+  "type": "smsir",
+  "isDefault": false,
+  "smsirApiKey": "smsirApiKey-value",
+  "smsirNumber": "+15550100",
+  "smsirTemplate": "{{ name }} is {{ status }}"
+ },
+ "SMSManager": {
+  "name": "SMSManager target",
+  "type": "SMSManager",
+  "isDefault": false,
+  "smsmanagerApiKey": "smsmanagerApiKey-value",
+  "numbers": "+15550100",
+  "messageType": "text"
+ },
+ "SMSPartner": {
+  "name": "SMSPartner target",
+  "type": "SMSPartner",
+  "isDefault": false,
+  "smspartnerApikey": "smspartnerApikey-value",
+  "smspartnerSenderName": "smspartnerSenderName-value",
+  "smspartnerPhoneNumber": "+15550100"
+ },
+ "smtp": {
+  "name": "smtp target",
+  "type": "smtp",
+  "isDefault": false,
+  "smtpHost": "smtp.example.invalid",
+  "smtpPort": 587,
+  "smtpSecure": false,
+  "smtpIgnoreSTARTTLS": "1",
+  "smtpIgnoreTLSError": false,
+  "smtpDkimDomain": "smtpDkimDomain-value",
+  "smtpDkimKeySelector": "smtpDkimKeySelector-value",
+  "smtpDkimPrivateKey": "smtpDkimPrivateKey-value",
+  "smtpDkimHashAlgo": "smtpDkimHashAlgo-value",
+  "smtpDkimheaderFieldNames": "smtpDkimheaderFieldNames-value",
+  "smtpDkimskipFields": "smtpDkimskipFields-value",
+  "smtpUsername": "smtpUsername-value",
+  "smtpPassword": "smtpPassword-value",
+  "smtpAdditionalHeaders": "{}",
+  "customSubject": "{{ name }} is {{ status }}",
+  "customBody": "{{ name }} is {{ status }}",
+  "htmlBody": false,
+  "smtpFrom": "smtpFrom-value",
+  "smtpCC": "smtpCC-value",
+  "smtpBCC": "smtpBCC-value",
+  "smtpTo": "+15550100"
+ },
+ "Splunk": {
+  "name": "Splunk target",
+  "type": "Splunk",
+  "isDefault": false,
+  "splunkAutoResolve": "recovery",
+  "splunkSeverity": "1",
+  "splunkRestURL": "https://example.invalid/hook",
+  "pagerdutyIntegrationKey": "pagerdutyIntegrationKey-value"
+ },
+ "SpugPush": {
+  "name": "SpugPush target",
+  "type": "SpugPush",
+  "isDefault": false,
+  "templateKey": "templateKey-value"
+ },
+ "squadcast": {
+  "name": "squadcast target",
+  "type": "squadcast",
+  "isDefault": false,
+  "squadcastWebhookURL": "https://example.invalid/hook"
+ },
+ "stackfield": {
+  "name": "stackfield target",
+  "type": "stackfield",
+  "isDefault": false,
+  "stackfieldwebhookURL": "https://example.invalid/hook"
+ },
+ "teams": {
+  "name": "teams target",
+  "type": "teams",
+  "isDefault": false,
+  "webhookUrl": "https://example.invalid/hook",
+  "teamsEnableTags": false
+ },
+ "PushByTechulus": {
+  "name": "PushByTechulus target",
+  "type": "PushByTechulus",
+  "isDefault": false,
+  "pushTitle": "pushTitle-value",
+  "pushTimeSensitive": false,
+  "pushChannel": "pushChannel-value",
+  "pushSound": "pushSound-value",
+  "pushAPIKey": "pushAPIKey-value"
+ },
+ "telegram": {
+  "name": "telegram target",
+  "type": "telegram",
+  "isDefault": false,
+  "telegramServerUrl": "https://example.invalid/hook",
+  "telegramChatID": "telegramChatID-value",
+  "telegramSendSilently": false,
+  "telegramProtectContent": "telegramProtectContent-value",
+  "telegramMessageThreadID": "telegramMessageThreadID-value",
+  "telegramUseTemplate": false,
+  "telegramTemplateParseMode": "telegramTemplateParseMode-value",
+  "telegramTemplate": "{{ name }} is {{ status }}",
+  "telegramBotToken": "telegramBotToken-value"
+ },
+ "telnyx": {
+  "name": "telnyx target",
+  "type": "telnyx",
+  "isDefault": false,
+  "telnyxPhoneNumber": "+15550100",
+  "telnyxToNumber": "+15550100",
+  "telnyxMessagingProfileId": "telnyxMessagingProfileId-value",
+  "telnyxApiKey": "telnyxApiKey-value"
+ },
+ "Teltonika": {
+  "name": "Teltonika target",
+  "type": "Teltonika",
+  "isDefault": false,
+  "teltonikaUrl": "https://example.invalid/hook",
+  "teltonikaUnsafeTls": "teltonikaUnsafeTls-value",
+  "teltonikaUsername": "teltonikaUsername-value",
+  "teltonikaPassword": "teltonikaPassword-value",
+  "teltonikaModem": "teltonikaModem-value",
+  "teltonikaPhoneNumber": "+15550100"
+ },
+ "threema": {
+  "name": "threema target",
+  "type": "threema",
+  "isDefault": false,
+  "threemaSenderIdentity": "threemaSenderIdentity-value",
+  "threemaSecret": "threemaSecret-value",
+  "threemaRecipientType": "identity",
+  "threemaRecipient": "+15550100"
+ },
+ "TurboSMTP": {
+  "name": "TurboSMTP target",
+  "type": "TurboSMTP",
+  "isDefault": false,
+  "turbosmtpConsumerKey": "turbosmtpConsumerKey-value",
+  "turbosmtpConsumerSecret": "turbosmtpConsumerSecret-value",
+  "turbosmtpRegion": "turbosmtpRegion-value",
+  "turbosmtpFromEmail": "alerts@example.invalid",
+  "turbosmtpToEmail": "alerts@example.invalid",
+  "turbosmtpSubject": "turbosmtpSubject-value",
+  "turbosmtpCcEmail": "alerts@example.invalid",
+  "turbosmtpBccEmail": "alerts@example.invalid"
+ },
+ "twilio": {
+  "name": "twilio target",
+  "type": "twilio",
+  "isDefault": false,
+  "twilioApiKey": "twilioApiKey-value",
+  "twilioAccountSID": "1",
+  "twilioAuthToken": "twilioAuthToken-value",
+  "twilioToNumber": "+15550100",
+  "twilioFromNumber": "+15550100",
+  "twilioMessagingServiceSID": "twilioMessagingServiceSID-value"
+ },
+ "VK": {
+  "name": "VK target",
+  "type": "VK",
+  "isDefault": false,
+  "vkAccessToken": "vkAccessToken-value",
+  "vkApiVersion": "1",
+  "vkPeerId": "vkPeerId-value",
+  "vkDontParseLinks": "vkDontParseLinks-value"
+ },
+ "VKTeams": {
+  "name": "VKTeams target",
+  "type": "VKTeams",
+  "isDefault": false,
+  "vkteamsBaseUrl": "https://example.invalid/hook",
+  "vkteamsBotToken": "vkteamsBotToken-value",
+  "vkteamsChatId": "vkteamsChatId-value",
+  "vkteamsUseTemplate": false,
+  "vkteamsTemplate": "{{ name }} is {{ status }}",
+  "vkteamsTemplateFormat": "plain"
+ },
+ "waha": {
+  "name": "waha target",
+  "type": "waha",
+  "isDefault": false,
+  "wahaApiKey": "wahaApiKey-value",
+  "wahaSession": "wahaSession-value",
+  "wahaChatId": "wahaChatId-value",
+  "wahaApiUrl": "https://example.invalid/hook"
+ },
+ "webhook": {
+  "name": "webhook target",
+  "type": "webhook",
+  "isDefault": false,
+  "httpMethod": "post",
+  "webhookContentType": "json",
+  "webhookCustomBody": "{{ name }} is {{ status }}",
+  "webhookAdditionalHeaders": "{}",
+  "webhookURL": "https://example.invalid/hook"
+ },
+ "Webpush": {
+  "name": "Webpush target",
+  "type": "Webpush",
+  "isDefault": false,
+  "subscription": {
+   "endpoint": "https://example.invalid/push",
+   "keys": {
+    "p256dh": "k",
+    "auth": "a"
+   }
+  }
+ },
+ "WeCom": {
+  "name": "WeCom target",
+  "type": "WeCom",
+  "isDefault": false,
+  "weComBotKey": "weComBotKey-value",
+  "weComMentionedMobileList": "+15550100"
+ },
+ "whapi": {
+  "name": "whapi target",
+  "type": "whapi",
+  "isDefault": false,
+  "whapiAuthToken": "whapiAuthToken-value",
+  "whapiRecipient": "+15550100",
+  "whapiApiUrl": "https://example.invalid/hook"
+ },
+ "WPush": {
+  "name": "WPush target",
+  "type": "WPush",
+  "isDefault": false,
+  "wpushAPIkey": "wpushAPIkey-value",
+  "wpushChannel": "wpushChannel-value"
+ },
+ "WxPusher": {
+  "name": "WxPusher target",
+  "type": "WxPusher",
+  "isDefault": false,
+  "wxpusherSPT": "spt1,spt2"
+ },
+ "YZJ": {
+  "name": "YZJ target",
+  "type": "YZJ",
+  "isDefault": false,
+  "yzjWebHookUrl": "https://example.invalid/hook",
+  "yzjToken": "yzjToken-value"
+ },
+ "ZohoCliq": {
+  "name": "ZohoCliq target",
+  "type": "ZohoCliq",
+  "isDefault": false,
+  "webhookUrl": "https://example.invalid/hook"
+ }
+}

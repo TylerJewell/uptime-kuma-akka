@@ -2,25 +2,35 @@ package io.akka.uptimekuma.application;
 
 import akka.javasdk.annotations.Component;
 import akka.javasdk.keyvalueentity.KeyValueEntity;
-import io.akka.uptimekuma.domain.NotificationTarget;
 
-/** Where one notification goes. */
+/** One notification target's stored settings. */
 @Component(id = "notification")
-public class NotificationEntity extends KeyValueEntity<NotificationTarget> {
+public class NotificationEntity extends KeyValueEntity<StoredRecord> {
 
-  /**
-   * A lookup's answer. Wrapped because a key-value entity that has never been written has null
-   * state, and replying with that is a runtime failure rather than an absence the caller can read —
-   * which matters here, since the fan-out has to distinguish "this target refused" from "there is
-   * no such target".
-   */
-  public record Lookup(NotificationTarget target) {}
-
-  public Effect<String> put(NotificationTarget target) {
-    return effects().updateState(target).thenReply("ok");
+  @Override
+  public StoredRecord emptyState() {
+    return StoredRecord.empty();
   }
 
-  public ReadOnlyEffect<Lookup> get() {
-    return effects().reply(new Lookup(currentState()));
+  public Effect<String> put(RecordFields fields) {
+    return effects()
+        .updateState(RecordStates.replaced(commandContext().entityId(), fields.values()))
+        .thenReply("saved");
+  }
+
+  public Effect<String> patch(RecordFields fields) {
+    return effects()
+        .updateState(RecordStates.merged(currentState(), commandContext().entityId(), fields.values()))
+        .thenReply("saved");
+  }
+
+  public ReadOnlyEffect<StoredRecord> get() {
+    return effects().reply(currentState());
+  }
+
+  public Effect<String> delete() {
+    return effects()
+        .updateState(RecordStates.removed(commandContext().entityId()))
+        .thenReply("deleted");
   }
 }

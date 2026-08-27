@@ -1,0 +1,6 @@
+# Trees this port did not write. Every line here is somebody else's hand-written source or a
+# table generated from it, kept byte-for-byte so that what it produces can be compared.
+
+gui # louislam/uptime-kuma's own front end, reused rather than rebuilt (RENDERING.md R3). Two lines differ from the original: the transport module it imports, and the module that supplies it.
+src/main/resources/static-resources # the built form of gui/, produced by the original's own vite build and served as-is
+src/main/resources/charwidths # anafanafo's character-width tables, copied so a badge renders to the same width the original draws

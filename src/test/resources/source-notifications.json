@@ -1,0 +1,7863 @@
+[
+ {
+  "name": "alerta",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8",
+     "Authorization": "Key alertaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "event": "msg",
+     "text": "alerta target Testing",
+     "group": "uptimekuma-msg",
+     "resource": "Message",
+     "environment": "alertaEnvironment-value",
+     "severity": "critical",
+     "correlate": [],
+     "service": [
+      "UptimeKuma"
+     ],
+     "value": "Timeout",
+     "tags": [
+      "uptimekuma"
+     ],
+     "attributes": {},
+     "origin": "uptimekuma",
+     "type": "exceptionAlert"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "alerta",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8",
+     "Authorization": "Key alertaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "correlate": [],
+     "event": "http",
+     "group": "uptimekuma-http",
+     "resource": "web",
+     "environment": "alertaEnvironment-value",
+     "severity": "alertaAlertState-value",
+     "service": [
+      "UptimeKuma"
+     ],
+     "value": "Timeout",
+     "tags": [
+      "uptimekuma"
+     ],
+     "attributes": {},
+     "origin": "uptimekuma",
+     "type": "exceptionAlert",
+     "text": "Service http is down."
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "alerta",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json;charset=UTF-8",
+     "Authorization": "Key alertaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "correlate": [],
+     "event": "http",
+     "group": "uptimekuma-http",
+     "resource": "web",
+     "environment": "alertaEnvironment-value",
+     "severity": "alertaRecoverState-value",
+     "service": [
+      "UptimeKuma"
+     ],
+     "value": "Timeout",
+     "tags": [
+      "uptimekuma"
+     ],
+     "attributes": {},
+     "origin": "uptimekuma",
+     "type": "exceptionAlert",
+     "text": "Service http is up."
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "AlertNow",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "summary": " - AlertNow target Testing",
+     "status": "open",
+     "event_type": "ERROR",
+     "event_id": "20260827"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "AlertNow",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "summary": "[undefined] 🔴 Application went down - [web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443 >> https://kuma.example.invalid/dashboard/1",
+     "status": "open",
+     "event_type": "ERROR",
+     "event_id": "20260827"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "AlertNow",
+  "shape": "up",
+  "requests": [],
+  "result": null,
+  "error": "Cannot read properties of undefined (reading 'replace')"
+ },
+ {
+  "name": "AliyunSMS",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "http://dysmsapi.aliyuncs.com/",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "params": null,
+    "data": "PhoneNumbers=%2B15550100&TemplateCode=templateCode-value&SignName=signName-value&TemplateParam=%7B%22name%22%3A%22%22%2C%22time%22%3A%22%22%2C%22status%22%3A%22%22%2C%22msg%22%3A%22AliyunSMS%20target%20Testing%22%7D&AccessKeyId=accessKeyId-value&Format=JSON&SignatureMethod=HMAC-SHA1&SignatureVersion=1.0&SignatureNonce=0.8541720717112768&Timestamp=2026-08-27T09%3A33%3A13.402Z&Action=SendSms&Version=2017-05-25&Signature=of4wdRm86watClW23EcIyO4lvBw%3D"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "AliyunSMS",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "http://dysmsapi.aliyuncs.com/",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "params": null,
+    "data": "PhoneNumbers=%2B15550100&TemplateCode=templateCode-value&SignName=signName-value&TemplateParam=%7B%22name%22%3A%22web%22%2C%22time%22%3A%222026-01-02%2003%3A04%3A05%22%2C%22status%22%3A%22DOWN%22%2C%22msg%22%3A%22connect%20ECONNREFUSED%20%5BIP%5D%22%7D&AccessKeyId=accessKeyId-value&Format=JSON&SignatureMethod=HMAC-SHA1&SignatureVersion=1.0&SignatureNonce=0.2849399948760474&Timestamp=2026-08-27T09%3A33%3A13.403Z&Action=SendSms&Version=2017-05-25&Signature=LBwV%2FXV5prytIAbYrgKByrSYgLs%3D"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "AliyunSMS",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "http://dysmsapi.aliyuncs.com/",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "params": null,
+    "data": "PhoneNumbers=%2B15550100&TemplateCode=templateCode-value&SignName=signName-value&TemplateParam=%7B%22name%22%3A%22web%22%2C%22time%22%3A%222026-01-02%2003%3A04%3A05%22%2C%22status%22%3A%22UP%22%2C%22msg%22%3A%22connect%20ECONNREFUSED%20%5BIP%5D%22%7D&AccessKeyId=accessKeyId-value&Format=JSON&SignatureMethod=HMAC-SHA1&SignatureVersion=1.0&SignatureNonce=0.19209785920938982&Timestamp=2026-08-27T09%3A33%3A13.403Z&Action=SendSms&Version=2017-05-25&Signature=MOXixq%2Bza2s9BH705kvheVXwpOs%3D"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "apprise",
+  "skipped": "transport is not HTTP, so the client stand-in does not reach it"
+ },
+ {
+  "name": "bale",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://tapi.bale.ai/botbaleBotToken-value/sendMessage",
+    "headers": {
+     "content-type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "chat_id": "baleChatID-value",
+     "text": "bale target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "bale",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://tapi.bale.ai/botbaleBotToken-value/sendMessage",
+    "headers": {
+     "content-type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "chat_id": "baleChatID-value",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "bale",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://tapi.bale.ai/botbaleBotToken-value/sendMessage",
+    "headers": {
+     "content-type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "chat_id": "baleChatID-value",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Bark",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Message",
+     "body": "Bark target Testing",
+     "icon": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "sound": "barkSound-value",
+     "group": "barkGroup-value"
+    }
+   }
+  ],
+  "result": "Bark notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "Bark",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Monitor Down",
+     "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "icon": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "sound": "barkSound-value",
+     "group": "barkGroup-value"
+    }
+   }
+  ],
+  "result": "Bark notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "Bark",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Monitor Up",
+     "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "icon": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "sound": "barkSound-value",
+     "group": "barkGroup-value"
+    }
+   }
+  ],
+  "result": "Bark notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "bearsms",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://app.bearsms.com/index.php?app=ws&u=bearsmsUsername-value&h=bearsmsHashKey-value&op=pv&to=%2B15550100&msg=bearsms+target+Testing&from=bearsmsSenderId-value",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "bearsms",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://app.bearsms.com/index.php?app=ws&u=bearsmsUsername-value&h=bearsmsHashKey-value&op=pv&to=%2B15550100&msg=%5Bweb%5D+%5BDown%5D+connect+ECONNREFUSED+127.0.0.1%3A443&from=bearsmsSenderId-value",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "bearsms",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://app.bearsms.com/index.php?app=ws&u=bearsmsUsername-value&h=bearsmsHashKey-value&op=pv&to=%2B15550100&msg=%5Bweb%5D+%5BUp%5D+connect+ECONNREFUSED+127.0.0.1%3A443&from=bearsmsSenderId-value",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Bitrix24",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook/im.notify.system.add.json",
+    "headers": {},
+    "params": {
+     "user_id": "bitrix24UserID-value",
+     "message": "[B]Uptime Kuma[/B]",
+     "ATTACH[COLOR]": "#67b518",
+     "ATTACH[BLOCKS][0][MESSAGE]": "Bitrix24 target Testing"
+    },
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Bitrix24",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook/im.notify.system.add.json",
+    "headers": {},
+    "params": {
+     "user_id": "bitrix24UserID-value",
+     "message": "[B]Uptime Kuma[/B]",
+     "ATTACH[COLOR]": "#67b518",
+     "ATTACH[BLOCKS][0][MESSAGE]": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    },
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Bitrix24",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook/im.notify.system.add.json",
+    "headers": {},
+    "params": {
+     "user_id": "bitrix24UserID-value",
+     "message": "[B]Uptime Kuma[/B]",
+     "ATTACH[COLOR]": "#b73419",
+     "ATTACH[BLOCKS][0][MESSAGE]": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    },
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ClickUp",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.clickup.com/api/v3/workspaces/clickupWorkspaceId-value/chat/channels/clickupChannelId-value/messages",
+    "headers": {
+     "Authorization": "clickupToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "type": "message",
+     "content": "ClickUp target Testing",
+     "content_format": "text/md"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ClickUp",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.clickup.com/api/v3/workspaces/clickupWorkspaceId-value/chat/channels/clickupChannelId-value/messages",
+    "headers": {
+     "Authorization": "clickupToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "type": "message",
+     "content": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443\n\n**Time (UTC):** 2026-01-02 03:04:05",
+     "content_format": "text/md"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ClickUp",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.clickup.com/api/v3/workspaces/clickupWorkspaceId-value/chat/channels/clickupChannelId-value/messages",
+    "headers": {
+     "Authorization": "clickupToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "type": "message",
+     "content": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443\n\n**Time (UTC):** 2026-01-02 03:04:05",
+     "content_format": "text/md"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "clicksendsms",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://rest.clicksend.com/v3/sms/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic Y2xpY2tzZW5kc21zTG9naW4tdmFsdWU6Y2xpY2tzZW5kc21zUGFzc3dvcmQtdmFsdWU=",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": {
+     "messages": [
+      {
+       "body": "clicksendsms target Testing",
+       "to": "+15550100",
+       "source": "uptime-kuma",
+       "from": "clicksendsmsSenderName-value"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "clicksendsms",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://rest.clicksend.com/v3/sms/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic Y2xpY2tzZW5kc21zTG9naW4tdmFsdWU6Y2xpY2tzZW5kc21zUGFzc3dvcmQtdmFsdWU=",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": {
+     "messages": [
+      {
+       "body": "[web] [ Down] connect ECONNREFUSED 127.0.0.1:443",
+       "to": "+15550100",
+       "source": "uptime-kuma",
+       "from": "clicksendsmsSenderName-value"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "clicksendsms",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://rest.clicksend.com/v3/sms/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic Y2xpY2tzZW5kc21zTG9naW4tdmFsdWU6Y2xpY2tzZW5kc21zUGFzc3dvcmQtdmFsdWU=",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": {
+     "messages": [
+      {
+       "body": "[web] [ Up] connect ECONNREFUSED 127.0.0.1:443",
+       "to": "+15550100",
+       "source": "uptime-kuma",
+       "from": "clicksendsmsSenderName-value"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "CallMeBot",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook?text=CallMeBot+target+Testing",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "CallMeBot",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook?text=%5Bweb%5D+%5B%F0%9F%94%B4+Down%5D+connect+ECONNREFUSED+127.0.0.1%3A443",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "CallMeBot",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook?text=%5Bweb%5D+%5B%E2%9C%85+Up%5D+connect+ECONNREFUSED+127.0.0.1%3A443",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smsc",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://smsc.kz/sys/send.php?fmt=3&translit=smscTranslit-value&login=smscLogin-value&psw=smscPassword-value&phones=+15550100&mes=smsc%20target%20Testing&sender=kuma",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smsc",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://smsc.kz/sys/send.php?fmt=3&translit=smscTranslit-value&login=smscLogin-value&psw=smscPassword-value&phones=+15550100&mes=%5Bweb%5D%20%5B%20Down%5D%20connect%20ECONNREFUSED%20127.0.0.1%3A443&sender=kuma",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smsc",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://smsc.kz/sys/send.php?fmt=3&translit=smscTranslit-value&login=smscLogin-value&psw=smscPassword-value&phones=+15550100&mes=%5Bweb%5D%20%5B%20Up%5D%20connect%20ECONNREFUSED%20127.0.0.1%3A443&sender=kuma",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "DingDing",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook?access_token=x&timestamp=1787823193405&sign=w%2Fo3fbk54BxgsGIEgkVHfYcJqLj%2FhBaRuJKB%2FWADUg4%3D",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": "{\"msgtype\":\"text\",\"text\":{\"content\":\"DingDing target Testing\"},\"at\":{\"isAtAll\":true,\"atUserIds\":[],\"atMobiles\":[]}}"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "DingDing",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook?access_token=x&timestamp=1787823193405&sign=w%2Fo3fbk54BxgsGIEgkVHfYcJqLj%2FhBaRuJKB%2FWADUg4%3D",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": "{\"msgtype\":\"markdown\",\"markdown\":{\"title\":\"[DOWN] web\",\"text\":\"## [DOWN] web \\n> connect ECONNREFUSED 127.0.0.1:443\\n> Time (UTC): 2026-01-02 03:04:05\"},\"at\":{\"isAtAll\":true,\"atUserIds\":[],\"atMobiles\":[]}}"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "DingDing",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook?access_token=x&timestamp=1787823193405&sign=w%2Fo3fbk54BxgsGIEgkVHfYcJqLj%2FhBaRuJKB%2FWADUg4%3D",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": "{\"msgtype\":\"markdown\",\"markdown\":{\"title\":\"[UP] web\",\"text\":\"## [UP] web \\n> connect ECONNREFUSED 127.0.0.1:443\\n> Time (UTC): 2026-01-02 03:04:05\"},\"at\":{\"isAtAll\":true,\"atUserIds\":[],\"atMobiles\":[]}}"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "discord",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "discordUsername-value",
+     "content": "discord target Testing",
+     "avatar_url": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "flags": 4096
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "discord",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "discordUsername-value",
+     "embeds": [
+      {
+       "title": "❌ Your service web went down. ❌",
+       "color": 16711680,
+       "timestamp": "2026-01-02 03:04:05.000",
+       "fields": [
+        {
+         "name": "Service Name",
+         "value": "web"
+        },
+        {
+         "name": "Went Offline",
+         "value": "<t:1767323045:F>"
+        },
+        {
+         "name": "Time (UTC)",
+         "value": "2026-01-02 03:04:05"
+        },
+        {
+         "name": "Error",
+         "value": "connect ECONNREFUSED 127.0.0.1:443"
+        }
+       ]
+      }
+     ],
+     "avatar_url": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "content": "discordPrefixMessage-value",
+     "flags": 4096
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "discord",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "discordUsername-value",
+     "embeds": [
+      {
+       "title": "✅ Your service web is up! ✅",
+       "color": 65280,
+       "timestamp": "2026-01-02 03:04:05.000",
+       "fields": [
+        {
+         "name": "Service Name",
+         "value": "web"
+        },
+        {
+         "name": "Time (UTC)",
+         "value": "2026-01-02 03:04:05"
+        },
+        {
+         "name": "Ping",
+         "value": "37 ms"
+        }
+       ]
+      }
+     ],
+     "avatar_url": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "content": "discordPrefixMessage-value",
+     "flags": 4096
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "fluxer",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "fluxerUsername-value",
+     "content": "fluxer target Testing",
+     "avatar_url": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "fluxer",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "fluxerUsername-value",
+     "embeds": [
+      {
+       "title": "❌ Your service web went down. ❌",
+       "color": 16711680,
+       "fields": [
+        {
+         "name": "Service Name",
+         "value": "web"
+        },
+        {
+         "name": "Went Offline",
+         "value": "<t:1767351845:F>"
+        },
+        {
+         "name": "Time (UTC)",
+         "value": "2026-01-02 03:04:05"
+        },
+        {
+         "name": "Error",
+         "value": "connect ECONNREFUSED 127.0.0.1:443"
+        }
+       ]
+      }
+     ],
+     "avatar_url": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "content": "fluxerPrefixMessage-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "fluxer",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "fluxerUsername-value",
+     "embeds": [
+      {
+       "title": "✅ Your service web is up! ✅",
+       "color": 65280,
+       "fields": [
+        {
+         "name": "Service Name",
+         "value": "web"
+        },
+        {
+         "name": "Time (UTC)",
+         "value": "2026-01-02 03:04:05"
+        },
+        {
+         "name": "Ping",
+         "value": "37 ms"
+        }
+       ]
+      }
+     ],
+     "avatar_url": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+     "content": "fluxerPrefixMessage-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Elks",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.46elks.com/a1/sms",
+    "headers": {
+     "Authorization": "Basic ZWxrc1VzZXJuYW1lLXZhbHVlOmVsa3NBdXRoVG9rZW4tdmFsdWU="
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Elks",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.46elks.com/a1/sms",
+    "headers": {
+     "Authorization": "Basic ZWxrc1VzZXJuYW1lLXZhbHVlOmVsa3NBdXRoVG9rZW4tdmFsdWU="
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Elks",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.46elks.com/a1/sms",
+    "headers": {
+     "Authorization": "Basic ZWxrc1VzZXJuYW1lLXZhbHVlOmVsa3NBdXRoVG9rZW4tdmFsdWU="
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "egosms",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://www.egosms.co/api/v1/plain/?number=%2B15550100&message=egosms+target+Testing&username=egosmsUsername-value&password=egosmsPassword-value&sender=egosmsSender-value&priority=0",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": {
+   "id": "1",
+   "ok": true,
+   "success": true,
+   "code": 0,
+   "errmsg": "ok",
+   "Message": "OK",
+   "messageId": "1",
+   "error_code": "000",
+   "response_code": 0,
+   "response": {
+    "status": 0
+   },
+   "data": {
+    "messages": [
+     {
+      "status": "SUCCESS"
+     }
+    ]
+   },
+   "content": {
+    "result": [
+     "{\"success\":\"ok\"}"
+    ]
+   },
+   "avatar": null,
+   "token": "t"
+  },
+  "error": null
+ },
+ {
+  "name": "egosms",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://www.egosms.co/api/v1/plain/?number=%2B15550100&message=%5Bweb%5D+%5B%F0%9F%94%B4+Down%5D+connect+ECONNREFUSED+127.0.0.1%3A443&username=egosmsUsername-value&password=egosmsPassword-value&sender=egosmsSender-value&priority=0",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": {
+   "id": "1",
+   "ok": true,
+   "success": true,
+   "code": 0,
+   "errmsg": "ok",
+   "Message": "OK",
+   "messageId": "1",
+   "error_code": "000",
+   "response_code": 0,
+   "response": {
+    "status": 0
+   },
+   "data": {
+    "messages": [
+     {
+      "status": "SUCCESS"
+     }
+    ]
+   },
+   "content": {
+    "result": [
+     "{\"success\":\"ok\"}"
+    ]
+   },
+   "avatar": null,
+   "token": "t"
+  },
+  "error": null
+ },
+ {
+  "name": "egosms",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://www.egosms.co/api/v1/plain/?number=%2B15550100&message=%5Bweb%5D+%5B%E2%9C%85+Up%5D+connect+ECONNREFUSED+127.0.0.1%3A443&username=egosmsUsername-value&password=egosmsPassword-value&sender=egosmsSender-value&priority=0",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": {
+   "id": "1",
+   "ok": true,
+   "success": true,
+   "code": 0,
+   "errmsg": "ok",
+   "Message": "OK",
+   "messageId": "1",
+   "error_code": "000",
+   "response_code": 0,
+   "response": {
+    "status": 0
+   },
+   "data": {
+    "messages": [
+     {
+      "status": "SUCCESS"
+     }
+    ]
+   },
+   "content": {
+    "result": [
+     "{\"success\":\"ok\"}"
+    ]
+   },
+   "avatar": null,
+   "token": "t"
+  },
+  "error": null
+ },
+ {
+  "name": "Feishu",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "msg_type": "text",
+     "content": {
+      "text": "Feishu target Testing"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Feishu",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "update_multi": false,
+       "wide_screen_mode": true
+      },
+      "header": {
+       "title": {
+        "tag": "plain_text",
+        "content": "UptimeKuma Alert: [Down] web"
+       },
+       "template": "red"
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**Message**: connect ECONNREFUSED 127.0.0.1:443\n**Ping**: 37 ms\n**Time (UTC)**: 2026-01-02 03:04:05"
+        }
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Feishu",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "msg_type": "interactive",
+     "card": {
+      "config": {
+       "update_multi": false,
+       "wide_screen_mode": true
+      },
+      "header": {
+       "title": {
+        "tag": "plain_text",
+        "content": "UptimeKuma Alert: [UP] web"
+       },
+       "template": "green"
+      },
+      "elements": [
+       {
+        "tag": "div",
+        "text": {
+         "tag": "lark_md",
+         "content": "**Message**: connect ECONNREFUSED 127.0.0.1:443\n**Ping**: 37 ms\n**Time (UTC)**: 2026-01-02 03:04:05"
+        }
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "FreeMobile",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://smsapi.free-mobile.fr/sendmsg?msg=FreeMobile%20target%20Testing",
+    "headers": {},
+    "params": null,
+    "data": {
+     "user": "+15550100",
+     "pass": "+15550100"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "FreeMobile",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://smsapi.free-mobile.fr/sendmsg?msg=%5Bweb%5D%20%5B%E2%9B%94%EF%B8%8F%20Down%5D%20connect%20ECONNREFUSED%20127.0.0.1%3A443",
+    "headers": {},
+    "params": null,
+    "data": {
+     "user": "+15550100",
+     "pass": "+15550100"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "FreeMobile",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://smsapi.free-mobile.fr/sendmsg?msg=%5Bweb%5D%20%5B%E2%9C%85%20Up%5D%20connect%20ECONNREFUSED%20127.0.0.1%3A443",
+    "headers": {},
+    "params": null,
+    "data": {
+     "user": "+15550100",
+     "pass": "+15550100"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoogleChat",
+  "shape": "test",
+  "requests": [],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoogleChat",
+  "shape": "down",
+  "requests": [],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoogleChat",
+  "shape": "up",
+  "requests": [],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoogleSheets",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "timestamp": "2026-08-27T09:33:13.406Z",
+     "status": "N/A",
+     "monitorName": "N/A",
+     "monitorUrl": "N/A",
+     "message": "GoogleSheets target Testing",
+     "responseTime": "N/A",
+     "statusCode": "N/A"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoogleSheets",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "timestamp": "2026-08-27T09:33:13.406Z",
+     "status": "DOWN",
+     "monitorName": "web",
+     "monitorUrl": "https://example.com",
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "responseTime": 37,
+     "statusCode": "N/A"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoogleSheets",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "timestamp": "2026-08-27T09:33:13.407Z",
+     "status": "UP",
+     "monitorName": "web",
+     "monitorUrl": "https://example.com",
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "responseTime": 37,
+     "statusCode": "N/A"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gorush",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "notifications": [
+      {
+       "tokens": [
+        "gorushDeviceToken-value"
+       ],
+       "platform": 2,
+       "message": "gorush target Testing",
+       "title": "gorushTitle-value",
+       "priority": "1",
+       "retry": 1,
+       "topic": "gorushTopic-value"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gorush",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "notifications": [
+      {
+       "tokens": [
+        "gorushDeviceToken-value"
+       ],
+       "platform": 2,
+       "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+       "title": "gorushTitle-value",
+       "priority": "1",
+       "retry": 1,
+       "topic": "gorushTopic-value"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gorush",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "notifications": [
+      {
+       "tokens": [
+        "gorushDeviceToken-value"
+       ],
+       "platform": 2,
+       "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+       "title": "gorushTitle-value",
+       "priority": "1",
+       "retry": 1,
+       "topic": "gorushTopic-value"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gotify",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/message?token=gotifyapplicationToken-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "gotify target Testing",
+     "priority": "1",
+     "title": "Uptime-Kuma"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gotify",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/message?token=gotifyapplicationToken-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "priority": "1",
+     "title": "Uptime-Kuma"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gotify",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/message?token=gotifyapplicationToken-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "priority": "1",
+     "title": "Uptime-Kuma"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GrafanaOncall",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "General notification",
+     "message": "GrafanaOncall target Testing",
+     "state": "alerting"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GrafanaOncall",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "web is down",
+     "message": "connect ECONNREFUSED 127.0.0.1:443",
+     "state": "alerting"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GrafanaOncall",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "web is up",
+     "message": "connect ECONNREFUSED 127.0.0.1:443",
+     "state": "ok"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "HomeAssistant",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/services/notify/notify",
+    "headers": {
+     "Authorization": "Bearer longLivedAccessToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma",
+     "message": "HomeAssistant target Testing",
+     "data": {
+      "channel": "Uptime Kuma",
+      "icon_url": "https://github.com/louislam/uptime-kuma/blob/master/public/icon.png?raw=true"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "HomeAssistant",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/services/notify/notify",
+    "headers": {
+     "Authorization": "Bearer longLivedAccessToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma",
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "data": {
+      "name": "web",
+      "status": 0,
+      "channel": "Uptime Kuma",
+      "icon_url": "https://github.com/louislam/uptime-kuma/blob/master/public/icon.png?raw=true"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "HomeAssistant",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/services/notify/notify",
+    "headers": {
+     "Authorization": "Bearer longLivedAccessToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma",
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "data": {
+      "name": "web",
+      "status": 1,
+      "channel": "Uptime Kuma",
+      "icon_url": "https://github.com/louislam/uptime-kuma/blob/master/public/icon.png?raw=true"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "HeiiOnCall",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://heiioncall.com/triggers/heiiOnCallTriggerId-value/alert",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer heiiOnCallApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "msg": "HeiiOnCall target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "HeiiOnCall",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://heiioncall.com/triggers/heiiOnCallTriggerId-value/alert",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer heiiOnCallApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "monitorID": 1,
+     "status": 0,
+     "time": "2026-01-02 03:04:05.000",
+     "msg": "connect ECONNREFUSED 127.0.0.1:443",
+     "ping": 37,
+     "important": true,
+     "duration": 0,
+     "retries": 1,
+     "timezone": "UTC",
+     "timezoneOffset": "+00:00",
+     "localDateTime": "2026-01-02 03:04:05",
+     "url": "https://kuma.example.invalid/dashboard/1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "HeiiOnCall",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://heiioncall.com/triggers/heiiOnCallTriggerId-value/resolve",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer heiiOnCallApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "monitorID": 1,
+     "status": 1,
+     "time": "2026-01-02 03:04:05.000",
+     "msg": "connect ECONNREFUSED 127.0.0.1:443",
+     "ping": 37,
+     "important": true,
+     "duration": 0,
+     "retries": 1,
+     "timezone": "UTC",
+     "timezoneOffset": "+00:00",
+     "localDateTime": "2026-01-02 03:04:05",
+     "url": "https://kuma.example.invalid/dashboard/1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Keep",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/alerts/event/uptimekuma",
+    "headers": {
+     "x-api-key": "webhookAPIKey-value",
+     "content-type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": null,
+     "monitor": null,
+     "msg": "Keep target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Keep",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/alerts/event/uptimekuma",
+    "headers": {
+     "x-api-key": "webhookAPIKey-value",
+     "content-type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Keep",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/alerts/event/uptimekuma",
+    "headers": {
+     "x-api-key": "webhookAPIKey-value",
+     "content-type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Kook",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://www.kookapp.cn/api/v3/message/create",
+    "headers": {
+     "Authorization": "Bot kookBotToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "target_id": "kookGuildID-value",
+     "content": "Kook target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Kook",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://www.kookapp.cn/api/v3/message/create",
+    "headers": {
+     "Authorization": "Bot kookBotToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "target_id": "kookGuildID-value",
+     "content": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Kook",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://www.kookapp.cn/api/v3/message/create",
+    "headers": {
+     "Authorization": "Bot kookBotToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "target_id": "kookGuildID-value",
+     "content": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "line",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.line.me/v2/bot/message/push",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer lineChannelAccessToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "lineUserID-value",
+     "messages": [
+      {
+       "type": "text",
+       "text": "Test Successful!"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "line",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.line.me/v2/bot/message/push",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer lineChannelAccessToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "lineUserID-value",
+     "messages": [
+      {
+       "type": "text",
+       "text": "UptimeKuma Alert: [🔴 Down]\nName: web \nconnect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "line",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.line.me/v2/bot/message/push",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer lineChannelAccessToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "lineUserID-value",
+     "messages": [
+      {
+       "type": "text",
+       "text": "UptimeKuma Alert: [✅ Up]\nName: web \nconnect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "lunasea",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://notify.lunasea.app/v1/custom/user/lunaseaUserID-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma Alert",
+     "body": "lunasea target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "lunasea",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://notify.lunasea.app/v1/custom/user/lunaseaUserID-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Alert: web",
+     "body": "[🔴 Down] connect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "lunasea",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://notify.lunasea.app/v1/custom/user/lunaseaUserID-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Alert: web",
+     "body": "[✅ Up] connect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "matrix",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "PUT",
+    "url": "https://example.invalid/hook/_matrix/client/r0/rooms/internalRoomId-value/send/m.room.message/VzbI964XjXzWUDojQs%2Fp",
+    "headers": {
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "msgtype": "m.text",
+     "body": "matrix target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "matrix",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "PUT",
+    "url": "https://example.invalid/hook/_matrix/client/r0/rooms/internalRoomId-value/send/m.room.message/rM2%2BIhMafqM%2BzaX7cWUQ",
+    "headers": {
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "msgtype": "m.text",
+     "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "matrix",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "PUT",
+    "url": "https://example.invalid/hook/_matrix/client/r0/rooms/internalRoomId-value/send/m.room.message/Tahj23sKabRM2spXwUu9",
+    "headers": {
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "msgtype": "m.text",
+     "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "mattermost",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "mattermostusername-value",
+     "text": "mattermost target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "mattermost",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "web mattermostusername-value",
+     "channel": "mattermostchannel-value",
+     "icon_emoji": "mattermosticonemo-value",
+     "icon_url": "https://example.invalid/hook",
+     "attachments": [
+      {
+       "fallback": "Your group / web service went down.",
+       "color": "#FF0000",
+       "title": "group / web service went down.",
+       "title_link": "https://example.com",
+       "fields": [
+        {
+         "short": false,
+         "title": "Error",
+         "value": "connect ECONNREFUSED 127.0.0.1:443"
+        },
+        {
+         "short": true,
+         "title": "Time (UTC)",
+         "value": "2026-01-02 03:04:05"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "mattermost",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "username": "web mattermostusername-value",
+     "channel": "mattermostchannel-value",
+     "icon_emoji": "mattermosticonemo-value",
+     "icon_url": "https://example.invalid/hook",
+     "attachments": [
+      {
+       "fallback": "Your group / web service went up!",
+       "color": "#32CD32",
+       "title": "group / web service went up!",
+       "title_link": "https://example.com",
+       "fields": [
+        {
+         "short": false,
+         "title": "Ping",
+         "value": "37ms"
+        },
+        {
+         "short": true,
+         "title": "Time (UTC)",
+         "value": "2026-01-02 03:04:05"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "nextcloudtalk",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "smtp.example.invalid/ocs/v2.php/apps/spreed/api/v1/bot/conversationToken-value/message",
+    "headers": {
+     "X-Nextcloud-Talk-Bot-Random": "9829960bd98dbc79cfac6369fd1e416e0d8340306b1283ced6648ccb2235630a",
+     "X-Nextcloud-Talk-Bot-Signature": "c89ebaf249d0190ea9f0028c2280380d0dad0c3cf20f78cb63d660c58b25d4f9",
+     "OCS-APIRequest": true
+    },
+    "params": null,
+    "data": {
+     "message": "nextcloudtalk target Testing",
+     "silent": false
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "nextcloudtalk",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "smtp.example.invalid/ocs/v2.php/apps/spreed/api/v1/bot/conversationToken-value/message",
+    "headers": {
+     "X-Nextcloud-Talk-Bot-Random": "6fad3fbbb37bbbe261a63edb888398f8102076eb5070bc1c1cd60e8288d31089",
+     "X-Nextcloud-Talk-Bot-Signature": "8b62ec97a449fcf5c2a366a392910f11ed6e3e02bd75460d6af6f78e82bad933",
+     "OCS-APIRequest": true
+    },
+    "params": null,
+    "data": {
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "silent": false
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "nextcloudtalk",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "smtp.example.invalid/ocs/v2.php/apps/spreed/api/v1/bot/conversationToken-value/message",
+    "headers": {
+     "X-Nextcloud-Talk-Bot-Random": "eea14a0f0594376957097baf9210a37dad2ea7474b16af730d299dc6b1d56b00",
+     "X-Nextcloud-Talk-Bot-Signature": "45858be9598285b31c344c176ff654529a3e2543cf7d0ec750153972b26f5143",
+     "OCS-APIRequest": true
+    },
+    "params": null,
+    "data": {
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "silent": false
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "nostr",
+  "skipped": "transport is not HTTP, so the client stand-in does not reach it"
+ },
+ {
+  "name": "ntfy",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "X-Call": "ntfyCall-value"
+    },
+    "params": null,
+    "data": {
+     "topic": "ntfytopic-value",
+     "title": "ntfytopic-value [Uptime-Kuma]",
+     "message": "ntfy target Testing",
+     "priority": "1",
+     "tags": [
+      "test_tube"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ntfy",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "X-Call": "ntfyCall-value"
+    },
+    "params": null,
+    "data": {
+     "topic": "ntfytopic-value",
+     "message": "connect ECONNREFUSED 127.0.0.1:443",
+     "priority": "1",
+     "title": "web Down [Uptime-Kuma]",
+     "tags": [
+      "red_circle",
+      "env: prod"
+     ],
+     "actions": [
+      {
+       "action": "view",
+       "label": "Open web",
+       "url": "https://example.com"
+      }
+     ],
+     "icon": "ntfyIcon-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ntfy",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "X-Call": "ntfyCall-value"
+    },
+    "params": null,
+    "data": {
+     "topic": "ntfytopic-value",
+     "message": "connect ECONNREFUSED 127.0.0.1:443",
+     "priority": "1",
+     "title": "web Up [Uptime-Kuma]",
+     "tags": [
+      "green_circle",
+      "env: prod"
+     ],
+     "actions": [
+      {
+       "action": "view",
+       "label": "Open web",
+       "url": "https://example.com"
+      }
+     ],
+     "icon": "ntfyIcon-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "octopush",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.octopush.com/v1/public/sms-campaign/send",
+    "headers": {
+     "api-key": "octopushAPIKey-value",
+     "api-login": "octopushLogin-value",
+     "cache-control": "no-cache"
+    },
+    "params": null,
+    "data": {
+     "recipients": [
+      {
+       "phone_number": "+15550100"
+      }
+     ],
+     "text": "octopush target Testing",
+     "type": "text",
+     "purpose": "alert",
+     "sender": "octopushSenderName-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "octopush",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.octopush.com/v1/public/sms-campaign/send",
+    "headers": {
+     "api-key": "octopushAPIKey-value",
+     "api-login": "octopushLogin-value",
+     "cache-control": "no-cache"
+    },
+    "params": null,
+    "data": {
+     "recipients": [
+      {
+       "phone_number": "+15550100"
+      }
+     ],
+     "text": "[web] [ Down] connect ECONNREFUSED 127.0.0.1:443",
+     "type": "text",
+     "purpose": "alert",
+     "sender": "octopushSenderName-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "octopush",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.octopush.com/v1/public/sms-campaign/send",
+    "headers": {
+     "api-key": "octopushAPIKey-value",
+     "api-login": "octopushLogin-value",
+     "cache-control": "no-cache"
+    },
+    "params": null,
+    "data": {
+     "recipients": [
+      {
+       "phone_number": "+15550100"
+      }
+     ],
+     "text": "[web] [ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "type": "text",
+     "purpose": "alert",
+     "sender": "octopushSenderName-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "OneChat",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://chat-api.one.th/message/api/v1/push_message",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "recieverId-value",
+     "bot_id": "botId-value",
+     "type": "text",
+     "message": "Test Successful!"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "OneChat",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://chat-api.one.th/message/api/v1/push_message",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "recieverId-value",
+     "bot_id": "botId-value",
+     "type": "text",
+     "message": "UptimeKuma Alert:\n[🔴 Down]\nName: web\nconnect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "OneChat",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://chat-api.one.th/message/api/v1/push_message",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "recieverId-value",
+     "bot_id": "botId-value",
+     "type": "text",
+     "message": "UptimeKuma Alert:\n[🟢 Up]\nName: web\nconnect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "OneBot",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "httpAddr-value/send_msg",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "auto_escape": true,
+     "message": "UptimeKuma Alert: OneBot target Testing",
+     "message_type": "private",
+     "user_id": "recieverId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "OneBot",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "httpAddr-value/send_msg",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "auto_escape": true,
+     "message": "UptimeKuma Alert: [web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "message_type": "private",
+     "user_id": "recieverId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "OneBot",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "httpAddr-value/send_msg",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "auto_escape": true,
+     "message": "UptimeKuma Alert: [web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "message_type": "private",
+     "user_id": "recieverId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Onesender",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Authorization": "Bearer onesenderToken-value"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": null,
+     "monitor": null,
+     "msg": "Onesender target Testing",
+     "to": "+15550100@s.whatsapp.net",
+     "type": "text",
+     "recipient_type": "individual",
+     "text": {
+      "body": "Onesender target Testing"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Onesender",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Authorization": "Bearer onesenderToken-value"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "to": "+15550100@s.whatsapp.net",
+     "type": "text",
+     "recipient_type": "individual",
+     "text": {
+      "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Onesender",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Authorization": "Bearer onesenderToken-value"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "to": "+15550100@s.whatsapp.net",
+     "type": "text",
+     "recipient_type": "individual",
+     "text": {
+      "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Ooredoo",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded",
+     "Authorization": "Bearer ooredooBearerToken-value"
+    },
+    "params": null,
+    "data": "username=ooredooUsername-value&access_key=b29yZWRvb0FjY2Vzc0tleS12YWx1ZQ%3D%3D&message=Ooredoo+target+Testing&batch=9609991234"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Ooredoo",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded",
+     "Authorization": "Bearer ooredooBearerToken-value"
+    },
+    "params": null,
+    "data": "username=ooredooUsername-value&access_key=b29yZWRvb0FjY2Vzc0tleS12YWx1ZQ%3D%3D&message=%5Bweb%5D+%5B%F0%9F%94%B4+Down%5D+connect+ECONNREFUSED+127.0.0.1%3A443&batch=9609991234"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Ooredoo",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded",
+     "Authorization": "Bearer ooredooBearerToken-value"
+    },
+    "params": null,
+    "data": "username=ooredooUsername-value&access_key=b29yZWRvb0FjY2Vzc0tleS12YWx1ZQ%3D%3D&message=%5Bweb%5D+%5B%E2%9C%85+Up%5D+connect+ECONNREFUSED+127.0.0.1%3A443&batch=9609991234"
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Opsgenie",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.opsgenie.com/v2/alerts",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "GenieKey opsgenieApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "message": "Opsgenie target Testing",
+     "alias": "uptime-kuma-notification-test",
+     "source": "Uptime Kuma",
+     "priority": "P5"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Opsgenie",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.opsgenie.com/v2/alerts",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "GenieKey opsgenieApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "message": "Uptime Kuma Alert: web",
+     "alias": "web",
+     "description": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "source": "Uptime Kuma",
+     "priority": "P1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Opsgenie",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.opsgenie.com/v2/alerts/web/close?identifierType=alias",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "GenieKey opsgenieApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "source": "Uptime Kuma"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "JiraServiceManagement",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.atlassian.com/jsm/ops/api/jsmCloudId-value/v1/alerts",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "Authorization": "Basic YWxlcnRzQGV4YW1wbGUuaW52YWxpZDpqc21BcGlUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {
+     "message": "JiraServiceManagement target Testing",
+     "alias": "uptime-kuma-notification-test",
+     "source": "Uptime Kuma",
+     "priority": "P5",
+     "tags": [
+      "Uptime Kuma"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "JiraServiceManagement",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.atlassian.com/jsm/ops/api/jsmCloudId-value/v1/alerts",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "Authorization": "Basic YWxlcnRzQGV4YW1wbGUuaW52YWxpZDpqc21BcGlUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {
+     "message": "Uptime Kuma Alert: web",
+     "alias": "web",
+     "description": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "source": "Uptime Kuma",
+     "priority": "P1",
+     "tags": [
+      "Uptime Kuma"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "JiraServiceManagement",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://api.atlassian.com/jsm/ops/api/jsmCloudId-value/v1/alerts/alias?alias=web",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "Authorization": "Basic YWxlcnRzQGV4YW1wbGUuaW52YWxpZDpqc21BcGlUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": null
+   },
+   {
+    "method": "POST",
+    "url": "https://api.atlassian.com/jsm/ops/api/jsmCloudId-value/v1/alerts/1/close",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "Authorization": "Basic YWxlcnRzQGV4YW1wbGUuaW52YWxpZDpqc21BcGlUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {
+     "source": "Uptime Kuma"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PagerDuty",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "payload": {
+      "summary": "[Uptime Kuma Alert] PagerDuty target Testing",
+      "severity": "1",
+      "source": "Uptime Kuma Test Button"
+     },
+     "routing_key": "pagerdutyIntegrationKey-value",
+     "event_action": "trigger",
+     "dedup_key": "Uptime Kuma/test"
+    }
+   }
+  ],
+  "result": "PagerDuty notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "PagerDuty",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "payload": {
+      "summary": "[Uptime Kuma Monitor 🔴 Down] [web] connect ECONNREFUSED 127.0.0.1:443",
+      "severity": "1",
+      "source": "https://example.com"
+     },
+     "routing_key": "pagerdutyIntegrationKey-value",
+     "event_action": "trigger",
+     "dedup_key": "Uptime Kuma/1"
+    }
+   }
+  ],
+  "result": "PagerDuty notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "PagerDuty",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "payload": {
+      "summary": "[Uptime Kuma Monitor ✅ Up] [web] connect ECONNREFUSED 127.0.0.1:443",
+      "severity": "1",
+      "source": "https://example.com"
+     },
+     "routing_key": "pagerdutyIntegrationKey-value",
+     "event_action": "resolve",
+     "dedup_key": "Uptime Kuma/1"
+    }
+   }
+  ],
+  "result": "PagerDuty notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "FlashDuty",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.flashcat.cloud/event/push/alert/standard?integration_key=flashdutyIntegrationKey-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "description": "[Uptime Kuma Alert] [https://flashcat.cloud] FlashDuty target Testing",
+     "title": "Uptime Kuma Alert",
+     "event_status": "Info",
+     "alert_key": "lsgdqu",
+     "labels": {
+      "resource": "FlashDuty target Testing",
+      "check": "https://flashcat.cloud"
+     }
+    }
+   }
+  ],
+  "result": "FlashDuty notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "FlashDuty",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.flashcat.cloud/event/push/alert/standard?integration_key=flashdutyIntegrationKey-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "description": "[Uptime Kuma Monitor 🔴 Down] [web] connect ECONNREFUSED 127.0.0.1:443",
+     "title": "Uptime Kuma Monitor 🔴 Down",
+     "event_status": "1",
+     "alert_key": "1",
+     "labels": {
+      "resource": "https://example.com",
+      "check": "web",
+      "env": "prod"
+     }
+    }
+   }
+  ],
+  "result": "FlashDuty notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "FlashDuty",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.flashcat.cloud/event/push/alert/standard?integration_key=flashdutyIntegrationKey-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "description": "[Uptime Kuma Monitor ✅ Up] [web] connect ECONNREFUSED 127.0.0.1:443",
+     "title": "Uptime Kuma Monitor ✅ Up",
+     "event_status": "Ok",
+     "alert_key": "1",
+     "labels": {
+      "resource": "https://example.com",
+      "check": "web",
+      "env": "prod"
+     }
+    }
+   }
+  ],
+  "result": "FlashDuty notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "Flowtriq",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json",
+     "X-API-Key": "flowtriqApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "source": "uptime-kuma",
+     "status": "info",
+     "monitor": "Unknown",
+     "msg": "Flowtriq target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Flowtriq",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json",
+     "X-API-Key": "flowtriqApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "source": "uptime-kuma",
+     "status": "down",
+     "monitor": "web",
+     "msg": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "heartbeat": {
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "ping": 37,
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "timezone": "UTC"
+     },
+     "monitorInfo": {
+      "id": 1,
+      "name": "web",
+      "type": "http",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Flowtriq",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json",
+     "X-API-Key": "flowtriqApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "source": "uptime-kuma",
+     "status": "up",
+     "monitor": "web",
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "heartbeat": {
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "ping": 37,
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "timezone": "UTC"
+     },
+     "monitorInfo": {
+      "id": 1,
+      "name": "web",
+      "type": "http",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PagerTree",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "event_type": "create",
+     "id": "uptime-kuma",
+     "title": "PagerTree target Testing",
+     "urgency": "pagertreeUrgency-value",
+     "heartbeat": null,
+     "monitor": null
+    }
+   }
+  ],
+  "result": "PagerTree notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "PagerTree",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "event_type": "create",
+     "id": 1,
+     "title": "Uptime Kuma Monitor \"web\" is DOWN",
+     "urgency": "pagertreeUrgency-value",
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "result": "PagerTree notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "PagerTree",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "event_type": "resolve",
+     "id": 1,
+     "title": null,
+     "urgency": "pagertreeUrgency-value",
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "result": "PagerTree notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "pinglet",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Authorization": "Bearer pingletApiKey-value"
+    },
+    "params": {
+     "rewrite": "uptimekuma"
+    },
+    "data": {
+     "heartbeat": null,
+     "monitor": null,
+     "msg": "pinglet target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pinglet",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Authorization": "Bearer pingletApiKey-value"
+    },
+    "params": {
+     "rewrite": "uptimekuma"
+    },
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pinglet",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Authorization": "Bearer pingletApiKey-value"
+    },
+    "params": {
+     "rewrite": "uptimekuma"
+    },
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "plivo",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.plivo.com/v1/Account/plivoAuthID-value/Message/",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic cGxpdm9BdXRoSUQtdmFsdWU6cGxpdm9BdXRoVG9rZW4tdmFsdWU="
+    },
+    "params": null,
+    "data": {
+     "src": "+15550100",
+     "dst": "+15550100",
+     "text": "plivo target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "plivo",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.plivo.com/v1/Account/plivoAuthID-value/Message/",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic cGxpdm9BdXRoSUQtdmFsdWU6cGxpdm9BdXRoVG9rZW4tdmFsdWU="
+    },
+    "params": null,
+    "data": {
+     "src": "+15550100",
+     "dst": "+15550100",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "plivo",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.plivo.com/v1/Account/plivoAuthID-value/Message/",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic cGxpdm9BdXRoSUQtdmFsdWU6cGxpdm9BdXRoVG9rZW4tdmFsdWU="
+    },
+    "params": null,
+    "data": {
+     "src": "+15550100",
+     "dst": "+15550100",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "promosms",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://promosms.com/api/rest/v3_2/sms",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic cHJvbW9zbXNMb2dpbi12YWx1ZTpwcm9tb3Ntc1Bhc3N3b3JkLXZhbHVl",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": {
+     "recipients": [
+      "+15550100"
+     ],
+     "text": "promosms target Testing",
+     "long-sms": false,
+     "type": null,
+     "sender": "promosmsSenderName-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "promosms",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://promosms.com/api/rest/v3_2/sms",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic cHJvbW9zbXNMb2dpbi12YWx1ZTpwcm9tb3Ntc1Bhc3N3b3JkLXZhbHVl",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": {
+     "recipients": [
+      "+15550100"
+     ],
+     "text": "[web] [ Down] connect ECONNREFUSED 127.0.0.1:443",
+     "long-sms": false,
+     "type": null,
+     "sender": "promosmsSenderName-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "promosms",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://promosms.com/api/rest/v3_2/sms",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic cHJvbW9zbXNMb2dpbi12YWx1ZTpwcm9tb3Ntc1Bhc3N3b3JkLXZhbHVl",
+     "Accept": "text/json"
+    },
+    "params": null,
+    "data": {
+     "recipients": [
+      "+15550100"
+     ],
+     "text": "[web] [ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "long-sms": false,
+     "type": null,
+     "sender": "promosmsSenderName-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pumble",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "attachments": [
+      {
+       "title": "Uptime Kuma Alert",
+       "text": "pumble target Testing",
+       "color": "#5BDD8B"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pumble",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "attachments": [
+      {
+       "title": "web is down",
+       "text": "connect ECONNREFUSED 127.0.0.1:443",
+       "color": "#DC3645"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pumble",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "attachments": [
+      {
+       "title": "web is up",
+       "text": "connect ECONNREFUSED 127.0.0.1:443",
+       "color": "#5BDD8B"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushbullet",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushbullet.com/v2/pushes",
+    "headers": {
+     "Access-Token": "pushbulletAccessToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "type": "note",
+     "title": "Uptime Kuma Alert",
+     "body": "pushbullet target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushbullet",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushbullet.com/v2/pushes",
+    "headers": {
+     "Access-Token": "pushbulletAccessToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "type": "note",
+     "title": "UptimeKuma Alert: web",
+     "body": "[🔴 Down] connect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushbullet",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushbullet.com/v2/pushes",
+    "headers": {
+     "Access-Token": "pushbulletAccessToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "type": "note",
+     "title": "UptimeKuma Alert: web",
+     "body": "[✅ Up] connect ECONNREFUSED 127.0.0.1:443\nTime (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushDeer",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "pushdeerServer-value/message/push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "pushkey": "pushdeerKey-value",
+     "text": "## Uptime Kuma Message",
+     "desp": "PushDeer target Testing",
+     "type": "markdown"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushDeer",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "pushdeerServer-value/message/push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "pushkey": "pushdeerKey-value",
+     "text": "## Uptime Kuma: web down",
+     "desp": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "type": "markdown"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushDeer",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "pushdeerServer-value/message/push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "pushkey": "pushdeerKey-value",
+     "text": "## Uptime Kuma: web up",
+     "desp": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "type": "markdown"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushover",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushover.net/1/messages.json",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "pushover target Testing",
+     "user": "pushoveruserkey-value",
+     "token": "pushoverapptoken-value",
+     "sound": "pushoversounds-value",
+     "priority": "1",
+     "title": "pushovertitle-value",
+     "retry": "30",
+     "expire": "3600",
+     "html": 1,
+     "device": "pushoverdevice-value",
+     "ttl": "1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushover",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushover.net/1/messages.json",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443\n<b>Time (UTC)</b>: 2026-01-02 03:04:05",
+     "user": "pushoveruserkey-value",
+     "token": "pushoverapptoken-value",
+     "sound": "pushoversounds-value",
+     "priority": "1",
+     "title": "pushovertitle-value",
+     "retry": "30",
+     "expire": "3600",
+     "html": 1,
+     "url": "https://kuma.example.invalid/dashboard/1",
+     "url_title": "Link to Monitor",
+     "device": "pushoverdevice-value",
+     "ttl": "1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushover",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushover.net/1/messages.json",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443\n<b>Time (UTC)</b>: 2026-01-02 03:04:05",
+     "user": "pushoveruserkey-value",
+     "token": "pushoverapptoken-value",
+     "sound": "pushoversounds_up-value",
+     "priority": "1",
+     "title": "pushovertitle-value",
+     "retry": "30",
+     "expire": "3600",
+     "html": 1,
+     "url": "https://kuma.example.invalid/dashboard/1",
+     "url_title": "Link to Monitor",
+     "device": "pushoverdevice-value",
+     "ttl": "1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushPlus",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://www.pushplus.plus/send",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "token": "pushPlusSendKey-value",
+     "title": "UptimeKuma Message",
+     "content": "PushPlus target Testing",
+     "template": "html"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushPlus",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://www.pushplus.plus/send",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "token": "pushPlusSendKey-value",
+     "title": "UptimeKuma Monitor Down web",
+     "content": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "template": "html"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushPlus",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://www.pushplus.plus/send",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "token": "pushPlusSendKey-value",
+     "title": "UptimeKuma Monitor Up web",
+     "content": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "template": "html"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushy",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushy.me/push?api_key=pushyAPIKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "to": "pushyToken-value",
+     "data": {
+      "message": "Uptime-Kuma"
+     },
+     "notification": {
+      "body": "pushy target Testing",
+      "badge": 1,
+      "sound": "ping.aiff"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushy",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushy.me/push?api_key=pushyAPIKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "to": "pushyToken-value",
+     "data": {
+      "message": "Uptime-Kuma"
+     },
+     "notification": {
+      "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+      "badge": 1,
+      "sound": "ping.aiff"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "pushy",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.pushy.me/push?api_key=pushyAPIKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "to": "pushyToken-value",
+     "data": {
+      "message": "Uptime-Kuma"
+     },
+     "notification": {
+      "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+      "badge": 1,
+      "sound": "ping.aiff"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "rocket.chat",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "rocket.chat target Testing",
+     "channel": "rocketchannel-value",
+     "username": "rocketusername-value",
+     "icon_emoji": "rocketiconemo-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "rocket.chat",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "Uptime Kuma Alert",
+     "channel": "rocketchannel-value",
+     "username": "rocketusername-value",
+     "icon_emoji": "rocketiconemo-value",
+     "attachments": [
+      {
+       "title": "Uptime Kuma Alert *Time (UTC)*\n2026-01-02 03:04:05",
+       "text": "*Message*\n[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+       "color": "#ff0000",
+       "title_link": "https://kuma.example.invalid/dashboard/1"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "rocket.chat",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "Uptime Kuma Alert",
+     "channel": "rocketchannel-value",
+     "username": "rocketusername-value",
+     "icon_emoji": "rocketiconemo-value",
+     "attachments": [
+      {
+       "title": "Uptime Kuma Alert *Time (UTC)*\n2026-01-02 03:04:05",
+       "text": "*Message*\n[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+       "color": "#32cd32",
+       "title_link": "https://kuma.example.invalid/dashboard/1"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ServerChan",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://sctapi.ftqq.com/serverChanSendKey-value.send",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Message",
+     "desp": "ServerChan target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ServerChan",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://sctapi.ftqq.com/serverChanSendKey-value.send",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Monitor Down web",
+     "desp": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ServerChan",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://sctapi.ftqq.com/serverChanSendKey-value.send",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Monitor Up web",
+     "desp": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "serwersms",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api2.serwersms.pl/messages/send_sms",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "username": "serwersmsUsername-value",
+     "password": "serwersmsPassword-value",
+     "text": "serwersms target Testing",
+     "sender": "serwersmsSenderName-value",
+     "phone": "+15550100"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "serwersms",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api2.serwersms.pl/messages/send_sms",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "username": "serwersmsUsername-value",
+     "password": "serwersmsPassword-value",
+     "text": "[web] [ Down] connect ECONNREFUSED 127.0.0.1:443",
+     "sender": "serwersmsSenderName-value",
+     "phone": "+15550100"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "serwersms",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api2.serwersms.pl/messages/send_sms",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "username": "serwersmsUsername-value",
+     "password": "serwersmsPassword-value",
+     "text": "[web] [ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "sender": "serwersmsSenderName-value",
+     "phone": "+15550100"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "signal",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "signal target Testing",
+     "number": "+15550100",
+     "recipients": [
+      "+15550100"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "signal",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "number": "+15550100",
+     "recipients": [
+      "+15550100"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "signal",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "number": "+15550100",
+     "recipients": [
+      "+15550100"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SIGNL4",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": null,
+     "monitor": null,
+     "msg": "SIGNL4 target Testing",
+     "X-S4-SourceSystem": "UptimeKuma",
+     "monitorUrl": "",
+     "title": "Uptime Kuma Alert",
+     "message": "SIGNL4 target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SIGNL4",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "X-S4-SourceSystem": "UptimeKuma",
+     "monitorUrl": "https://example.com",
+     "title": "Uptime Kuma Monitor 🔴 Down",
+     "X-S4-ExternalID": "UptimeKuma-undefined",
+     "X-S4-Status": "new"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SIGNL4",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "X-S4-SourceSystem": "UptimeKuma",
+     "monitorUrl": "https://example.com",
+     "title": "Uptime Kuma Monitor ✅ Up",
+     "X-S4-ExternalID": "UptimeKuma-undefined",
+     "X-S4-Status": "resolved"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSManager",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://http-api.smsmanager.cz/Send?apikey=smsmanagerApiKey-value&message=SMSManager target Testing&number=+15550100&gateway=undefined",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSManager",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://http-api.smsmanager.cz/Send?apikey=smsmanagerApiKey-value&message=[web] [ Down] connect ECONNREFUSED 127.0.0.1:443&number=+15550100&gateway=undefined",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSManager",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://http-api.smsmanager.cz/Send?apikey=smsmanagerApiKey-value&message=[web] [ Up] connect ECONNREFUSED 127.0.0.1:443&number=+15550100&gateway=undefined",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSPartner",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.smspartner.fr/v1/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json"
+    },
+    "params": null,
+    "data": {
+     "apiKey": "smspartnerApikey-value",
+     "sender": "smspartnerS",
+     "phoneNumbers": "+15550100",
+     "message": "SMSPartner target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSPartner",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.smspartner.fr/v1/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json"
+    },
+    "params": null,
+    "data": {
+     "apiKey": "smspartnerApikey-value",
+     "sender": "smspartnerS",
+     "phoneNumbers": "+15550100",
+     "message": "[web] [ Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSPartner",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.smspartner.fr/v1/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json"
+    },
+    "params": null,
+    "data": {
+     "apiKey": "smspartnerApikey-value",
+     "sender": "smspartnerS",
+     "phoneNumbers": "+15550100",
+     "message": "[web] [ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "slack",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "slack target Testing",
+     "channel": "slackchannel-value",
+     "username": "slackusername-value",
+     "icon_emoji": "slackiconemo-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "slack",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "_group_\nweb\n[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "channel": "slackchannel-value",
+     "username": "slackusername-value",
+     "icon_emoji": "slackiconemo-value",
+     "attachments": []
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "slack",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "_group_\nweb\n[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "channel": "slackchannel-value",
+     "username": "slackusername-value",
+     "icon_emoji": "slackiconemo-value",
+     "attachments": []
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSEagle",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v2/messages/sms",
+    "headers": {
+     "access-token": "smseagleToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "text": "SMSEagle target Testing",
+     "encoding": "unicode",
+     "priority": "1",
+     "contacts": [
+      15550100
+     ],
+     "groups": [
+      15550100
+     ],
+     "to": [
+      "+15550100"
+     ]
+    }
+   }
+  ],
+  "result": null,
+  "error": "resp.data.filter is not a function"
+ },
+ {
+  "name": "SMSEagle",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v2/messages/sms",
+    "headers": {
+     "access-token": "smseagleToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "encoding": "unicode",
+     "priority": "1",
+     "contacts": [
+      15550100
+     ],
+     "groups": [
+      15550100
+     ],
+     "to": [
+      "+15550100"
+     ]
+    }
+   }
+  ],
+  "result": null,
+  "error": "resp.data.filter is not a function"
+ },
+ {
+  "name": "SMSEagle",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v2/messages/sms",
+    "headers": {
+     "access-token": "smseagleToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "encoding": "unicode",
+     "priority": "1",
+     "contacts": [
+      15550100
+     ],
+     "groups": [
+      15550100
+     ],
+     "to": [
+      "+15550100"
+     ]
+    }
+   }
+  ],
+  "result": null,
+  "error": "resp.data.filter is not a function"
+ },
+ {
+  "name": "SMSGateway",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v1/sms/send",
+    "headers": {
+     "X-API-Key": "smsgatewayApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "body": "SMSGateway target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSGateway",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v1/sms/send",
+    "headers": {
+     "X-API-Key": "smsgatewayApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSGateway",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v1/sms/send",
+    "headers": {
+     "X-API-Key": "smsgatewayApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smtp",
+  "skipped": "transport is not HTTP, so the client stand-in does not reach it"
+ },
+ {
+  "name": "squadcast",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "squadcast target Testing",
+     "description": "",
+     "tags": {},
+     "heartbeat": null,
+     "source": "uptime-kuma"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "squadcast",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "web is DOWN",
+     "description": "connect ECONNREFUSED 127.0.0.1:443",
+     "tags": {
+      "AlertAddress": "https://example.com",
+      "env": {
+       "value": "prod",
+       "color": "#059669"
+      }
+     },
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "source": "uptime-kuma",
+     "event_id": 1,
+     "status": "trigger"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "squadcast",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "message": "web is UP",
+     "description": "connect ECONNREFUSED 127.0.0.1:443",
+     "tags": {
+      "AlertAddress": "https://example.com",
+      "env": {
+       "value": "prod",
+       "color": "#059669"
+      }
+     },
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "source": "uptime-kuma",
+     "event_id": 1,
+     "status": "resolve"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "stackfield",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "Title": "+Uptime Kuma Alert+\nstackfield target Testing\nhttps://kuma.example.invalid/"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "stackfield",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "Title": "+Uptime Kuma Alert+\n*web*\n[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443\nhttps://kuma.example.invalid/dashboard/1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "stackfield",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "Title": "+Uptime Kuma Alert+\n*web*\n[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443\nhttps://kuma.example.invalid/dashboard/1"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "teams",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "type": "message",
+     "summary": "Notification",
+     "attachments": [
+      {
+       "contentType": "application/vnd.microsoft.card.adaptive",
+       "contentUrl": "",
+       "content": {
+        "type": "AdaptiveCard",
+        "body": [
+         {
+          "type": "Container",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "ColumnSet",
+            "style": "emphasis",
+            "columns": [
+             {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "Center",
+              "items": [
+               {
+                "type": "Image",
+                "width": "32px",
+                "style": "Person",
+                "url": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png",
+                "altText": "Uptime Kuma Logo"
+               }
+              ]
+             },
+             {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+               {
+                "type": "TextBlock",
+                "size": "Medium",
+                "weight": "Bolder",
+                "text": "**Notification**"
+               },
+               {
+                "type": "TextBlock",
+                "size": "Small",
+                "weight": "Default",
+                "text": "Uptime Kuma Alert",
+                "isSubtle": true,
+                "spacing": "None"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "FactSet",
+          "separator": false,
+          "facts": [
+           {
+            "title": "Description",
+            "value": "teams target Testing"
+           }
+          ]
+         },
+         {
+          "type": "ActionSet",
+          "actions": []
+         }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.5"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "teams",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "type": "message",
+     "summary": "🔴 [web] went down",
+     "attachments": [
+      {
+       "contentType": "application/vnd.microsoft.card.adaptive",
+       "contentUrl": "",
+       "content": {
+        "type": "AdaptiveCard",
+        "body": [
+         {
+          "type": "Container",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "ColumnSet",
+            "style": "attention",
+            "columns": [
+             {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "Center",
+              "items": [
+               {
+                "type": "Image",
+                "width": "32px",
+                "style": "Person",
+                "url": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png",
+                "altText": "Uptime Kuma Logo"
+               }
+              ]
+             },
+             {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+               {
+                "type": "TextBlock",
+                "size": "Medium",
+                "weight": "Bolder",
+                "text": "**[web] went down**"
+               },
+               {
+                "type": "TextBlock",
+                "size": "Small",
+                "weight": "Default",
+                "text": "Uptime Kuma Alert",
+                "isSubtle": true,
+                "spacing": "None"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "FactSet",
+          "separator": false,
+          "facts": [
+           {
+            "title": "Description",
+            "value": "connect ECONNREFUSED 127.0.0.1:443"
+           },
+           {
+            "title": "Monitor",
+            "value": "web"
+           },
+           {
+            "title": "URL",
+            "value": "[https://example.com](https://example.com)"
+           },
+           {
+            "title": "Time",
+            "value": "2026-01-02 03:04:05 (UTC)"
+           }
+          ]
+         },
+         {
+          "type": "ActionSet",
+          "actions": [
+           {
+            "type": "Action.OpenUrl",
+            "title": "Visit Uptime Kuma",
+            "url": "https://kuma.example.invalid/dashboard/1"
+           },
+           {
+            "type": "Action.OpenUrl",
+            "title": "Visit Monitor URL",
+            "url": "https://example.com"
+           }
+          ]
+         }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.5"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "teams",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "type": "message",
+     "summary": "✅ [web] is back online",
+     "attachments": [
+      {
+       "contentType": "application/vnd.microsoft.card.adaptive",
+       "contentUrl": "",
+       "content": {
+        "type": "AdaptiveCard",
+        "body": [
+         {
+          "type": "Container",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "ColumnSet",
+            "style": "good",
+            "columns": [
+             {
+              "type": "Column",
+              "width": "auto",
+              "verticalContentAlignment": "Center",
+              "items": [
+               {
+                "type": "Image",
+                "width": "32px",
+                "style": "Person",
+                "url": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png",
+                "altText": "Uptime Kuma Logo"
+               }
+              ]
+             },
+             {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+               {
+                "type": "TextBlock",
+                "size": "Medium",
+                "weight": "Bolder",
+                "text": "**[web] is back online**"
+               },
+               {
+                "type": "TextBlock",
+                "size": "Small",
+                "weight": "Default",
+                "text": "Uptime Kuma Alert",
+                "isSubtle": true,
+                "spacing": "None"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "type": "FactSet",
+          "separator": false,
+          "facts": [
+           {
+            "title": "Description",
+            "value": "connect ECONNREFUSED 127.0.0.1:443"
+           },
+           {
+            "title": "Monitor",
+            "value": "web"
+           },
+           {
+            "title": "URL",
+            "value": "[https://example.com](https://example.com)"
+           },
+           {
+            "title": "Time",
+            "value": "2026-01-02 03:04:05 (UTC)"
+           }
+          ]
+         },
+         {
+          "type": "ActionSet",
+          "actions": [
+           {
+            "type": "Action.OpenUrl",
+            "title": "Visit Uptime Kuma",
+            "url": "https://kuma.example.invalid/dashboard/1"
+           },
+           {
+            "type": "Action.OpenUrl",
+            "title": "Visit Monitor URL",
+            "url": "https://example.com"
+           }
+          ]
+         }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.5"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushByTechulus",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://push.techulus.com/api/v1/notify/pushAPIKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "pushTitle-value",
+     "body": "PushByTechulus target Testing",
+     "timeSensitive": false,
+     "channel": "pushChannel-value",
+     "sound": "pushSound-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushByTechulus",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://push.techulus.com/api/v1/notify/pushAPIKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "pushTitle-value",
+     "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "timeSensitive": false,
+     "channel": "pushChannel-value",
+     "sound": "pushSound-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "PushByTechulus",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://push.techulus.com/api/v1/notify/pushAPIKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "pushTitle-value",
+     "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "timeSensitive": false,
+     "channel": "pushChannel-value",
+     "sound": "pushSound-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "telegram",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/bottelegramBotToken-value/sendMessage",
+    "headers": {},
+    "params": null,
+    "data": {
+     "chat_id": "telegramChatID-value",
+     "text": "telegram target Testing",
+     "disable_notification": false,
+     "protect_content": "telegramProtectContent-value",
+     "link_preview_options": {
+      "is_disabled": true
+     },
+     "message_thread_id": "telegramMessageThreadID-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "telegram",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/bottelegramBotToken-value/sendMessage",
+    "headers": {},
+    "params": null,
+    "data": {
+     "chat_id": "telegramChatID-value",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "disable_notification": false,
+     "protect_content": "telegramProtectContent-value",
+     "link_preview_options": {
+      "is_disabled": true
+     },
+     "message_thread_id": "telegramMessageThreadID-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "telegram",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/bottelegramBotToken-value/sendMessage",
+    "headers": {},
+    "params": null,
+    "data": {
+     "chat_id": "telegramChatID-value",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "disable_notification": false,
+     "protect_content": "telegramProtectContent-value",
+     "link_preview_options": {
+      "is_disabled": true
+     },
+     "message_thread_id": "telegramMessageThreadID-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Teltonika",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/api/login",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json",
+     "Authorization": "Bearer undefined"
+    },
+    "params": null,
+    "data": {
+     "username": "teltonikaUsername-value",
+     "password": "teltonikaPassword-value"
+    }
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/api/messages/actions/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json",
+     "Authorization": "Bearer undefined"
+    },
+    "params": null,
+    "data": {
+     "data": {
+      "modem": "teltonikaModem-value",
+      "number": "+15550100",
+      "message": "Teltonika target Testing"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Teltonika",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/api/login",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json",
+     "Authorization": "Bearer undefined"
+    },
+    "params": null,
+    "data": {
+     "username": "teltonikaUsername-value",
+     "password": "teltonikaPassword-value"
+    }
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/api/messages/actions/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json",
+     "Authorization": "Bearer undefined"
+    },
+    "params": null,
+    "data": {
+     "data": {
+      "modem": "teltonikaModem-value",
+      "number": "+15550100",
+      "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Teltonika",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/api/login",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json",
+     "Authorization": "Bearer undefined"
+    },
+    "params": null,
+    "data": {
+     "username": "teltonikaUsername-value",
+     "password": "teltonikaPassword-value"
+    }
+   },
+   {
+    "method": "POST",
+    "url": "https://example.invalid/api/messages/actions/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "cache-control": "no-cache",
+     "Accept": "application/json",
+     "Authorization": "Bearer undefined"
+    },
+    "params": null,
+    "data": {
+     "data": {
+      "modem": "teltonikaModem-value",
+      "number": "+15550100",
+      "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "telnyx",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.telnyx.com/v2/messages",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer telnyxApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "from": "+15550100",
+     "to": "+15550100",
+     "text": "telnyx target Testing",
+     "messaging_profile_id": "telnyxMessagingProfileId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "telnyx",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.telnyx.com/v2/messages",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer telnyxApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "from": "+15550100",
+     "to": "+15550100",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "messaging_profile_id": "telnyxMessagingProfileId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "telnyx",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.telnyx.com/v2/messages",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer telnyxApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "from": "+15550100",
+     "to": "+15550100",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "messaging_profile_id": "telnyxMessagingProfileId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "threema",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://msgapi.threema.ch/send_simple",
+    "headers": {
+     "Accept": "*/*",
+     "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Threema notification sent successfully.",
+  "error": null
+ },
+ {
+  "name": "threema",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://msgapi.threema.ch/send_simple",
+    "headers": {
+     "Accept": "*/*",
+     "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Threema notification sent successfully.",
+  "error": null
+ },
+ {
+  "name": "threema",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://msgapi.threema.ch/send_simple",
+    "headers": {
+     "Accept": "*/*",
+     "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Threema notification sent successfully.",
+  "error": null
+ },
+ {
+  "name": "twilio",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.twilio.com/2010-04-01/Accounts/1/Messages.json",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+     "Authorization": "Basic dHdpbGlvQXBpS2V5LXZhbHVlOnR3aWxpb0F1dGhUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "twilio",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.twilio.com/2010-04-01/Accounts/1/Messages.json",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+     "Authorization": "Basic dHdpbGlvQXBpS2V5LXZhbHVlOnR3aWxpb0F1dGhUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "twilio",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.twilio.com/2010-04-01/Accounts/1/Messages.json",
+    "headers": {
+     "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+     "Authorization": "Basic dHdpbGlvQXBpS2V5LXZhbHVlOnR3aWxpb0F1dGhUb2tlbi12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Splunk",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "message_type": "1",
+     "state_message": "[Uptime Kuma Alert] [Uptime Kuma Test Button] Splunk target Testing",
+     "entity_display_name": "Uptime Kuma Alert: undefined",
+     "routing_key": "pagerdutyIntegrationKey-value",
+     "entity_id": "Uptime Kuma/undefined"
+    }
+   }
+  ],
+  "result": "Splunk notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "Splunk",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "message_type": "1",
+     "state_message": "[Uptime Kuma Monitor 🔴 Down] [https://example.com] connect ECONNREFUSED 127.0.0.1:443",
+     "entity_display_name": "Uptime Kuma Alert: web",
+     "routing_key": "pagerdutyIntegrationKey-value",
+     "entity_id": "Uptime Kuma/1"
+    }
+   }
+  ],
+  "result": "Splunk notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "Splunk",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "message_type": "recovery",
+     "state_message": "[Uptime Kuma Monitor ✅ Up] [https://example.com] connect ECONNREFUSED 127.0.0.1:443",
+     "entity_display_name": "Uptime Kuma Alert: web",
+     "routing_key": "pagerdutyIntegrationKey-value",
+     "entity_id": "Uptime Kuma/1"
+    }
+   }
+  ],
+  "result": "Splunk notification succeed: OK",
+  "error": null
+ },
+ {
+  "name": "webhook",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "heartbeat": null,
+     "monitor": null,
+     "msg": "webhook target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "webhook",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 0,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "webhook",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "heartbeat": {
+      "monitorID": 1,
+      "status": 1,
+      "time": "2026-01-02 03:04:05.000",
+      "msg": "connect ECONNREFUSED 127.0.0.1:443",
+      "ping": 37,
+      "important": true,
+      "duration": 0,
+      "retries": 1,
+      "timezone": "UTC",
+      "timezoneOffset": "+00:00",
+      "localDateTime": "2026-01-02 03:04:05"
+     },
+     "monitor": {
+      "id": 1,
+      "name": "web",
+      "url": "https://example.com",
+      "hostname": null,
+      "port": null,
+      "type": "http",
+      "subtype": null,
+      "path": [
+       "group",
+       "web"
+      ],
+      "pathName": "group / web",
+      "tags": [
+       {
+        "name": "env",
+        "value": "prod",
+        "color": "#059669"
+       }
+      ]
+     },
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WeCom",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=weComBotKey-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "msgtype": "text",
+     "text": {
+      "content": "UptimeKuma Message\nWeCom target Testing",
+      "mentioned_mobile_list": [
+       "+15550100"
+      ]
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WeCom",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=weComBotKey-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "msgtype": "text",
+     "text": {
+      "content": "UptimeKuma Monitor Down\n[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+      "mentioned_mobile_list": [
+       "+15550100"
+      ]
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WeCom",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=weComBotKey-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "msgtype": "text",
+     "text": {
+      "content": "UptimeKuma Monitor Up\n[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+      "mentioned_mobile_list": [
+       "+15550100"
+      ]
+     }
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoAlert",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v2/generic/incoming?token=goAlertToken-value",
+    "headers": {
+     "Content-Type": "multipart/form-data"
+    },
+    "params": null,
+    "data": {
+     "summary": "GoAlert target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoAlert",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v2/generic/incoming?token=goAlertToken-value",
+    "headers": {
+     "Content-Type": "multipart/form-data"
+    },
+    "params": null,
+    "data": {
+     "summary": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "GoAlert",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/v2/generic/incoming?token=goAlertToken-value",
+    "headers": {
+     "Content-Type": "multipart/form-data"
+    },
+    "params": null,
+    "data": {
+     "summary": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "action": "close"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ZohoCliq",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "Notification\n\n*Description:* ZohoCliq target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ZohoCliq",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "🔴 [web] went down\n\n*Description:* connect ECONNREFUSED 127.0.0.1:443\n*URL:* https://example.com"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "ZohoCliq",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {},
+    "params": null,
+    "data": {
+     "text": "### ✅ [web] is back online\n\n*Description:* connect ECONNREFUSED 127.0.0.1:443\n*URL:* https://example.com"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SevenIO",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "sms",
+    "headers": {
+     "Content-Type": "application/json",
+     "X-API-Key": "sevenioApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "from": "sevenioSender-value",
+     "text": "SevenIO target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SevenIO",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "sms",
+    "headers": {
+     "Content-Type": "application/json",
+     "X-API-Key": "sevenioApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "from": "sevenioSender-value",
+     "text": "Your service web (https://example.com) went down at 2026-01-02 03:04:05 (UTC). Error: connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SevenIO",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "sms",
+    "headers": {
+     "Content-Type": "application/json",
+     "X-API-Key": "sevenioApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "from": "sevenioSender-value",
+     "text": "Your service web (https://example.com) went back up at 2026-01-02 03:04:05 (UTC)."
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "whapi",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/messages/text",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer whapiAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "body": "whapi target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "whapi",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/messages/text",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer whapiAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "body": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "whapi",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/messages/text",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer whapiAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "to": "+15550100",
+     "body": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "waha",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/sendText",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "X-Api-Key": "wahaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "session": "wahaSession-value",
+     "chatId": "wahaChatId-value",
+     "text": "waha target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "waha",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/sendText",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "X-Api-Key": "wahaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "session": "wahaSession-value",
+     "chatId": "wahaChatId-value",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "waha",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/sendText",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "X-Api-Key": "wahaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "session": "wahaSession-value",
+     "chatId": "wahaChatId-value",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "evolution",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/message/sendText/evolutionInstanceName-value",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "apikey": "evolutionAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "number": "+15550100",
+     "text": "Monitor Name not available is ⚠️ Test"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "evolution",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/message/sendText/evolutionInstanceName-value",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "apikey": "evolutionAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "number": "+15550100",
+     "text": "web is 🔴 Down"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "evolution",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/message/sendText/evolutionInstanceName-value",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "apikey": "evolutionAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "number": "+15550100",
+     "text": "web is ✅ Up"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "openwa",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/sessions/openwaSession-value/messages/send-text",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "X-Api-Key": "openwaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "chatId": "123@c.us",
+     "text": "Monitor Name not available is ⚠️ Test"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "openwa",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/sessions/openwaSession-value/messages/send-text",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "X-Api-Key": "openwaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "chatId": "123@c.us",
+     "text": "web is 🔴 Down"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "openwa",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/api/sessions/openwaSession-value/messages/send-text",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "X-Api-Key": "openwaApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "chatId": "123@c.us",
+     "text": "web is ✅ Up"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gtxmessaging",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://rest.gtx-messaging.net/smsc/sendsms/gtxMessagingApiKey-value/json",
+    "headers": {},
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gtxmessaging",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://rest.gtx-messaging.net/smsc/sendsms/gtxMessagingApiKey-value/json",
+    "headers": {},
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "gtxmessaging",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://rest.gtx-messaging.net/smsc/sendsms/gtxMessagingApiKey-value/json",
+    "headers": {},
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Cellsynt",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://se-1.cellsynt.net/sms.php",
+    "headers": {},
+    "params": {
+     "username": "cellsyntLogin-value",
+     "password": "cellsyntPassword-value",
+     "destination": "cellsyntDestination-value",
+     "text": "Cellsynt target Testing",
+     "originatortype": "text",
+     "originator": "cellsyntOriginator-value",
+     "allowconcat": 1
+    },
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Cellsynt",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://se-1.cellsynt.net/sms.php",
+    "headers": {},
+    "params": {
+     "username": "cellsyntLogin-value",
+     "password": "cellsyntPassword-value",
+     "destination": "cellsyntDestination-value",
+     "text": "[web] [ Down] connect ECONNREFUSED 127.0.0.1:443",
+     "originatortype": "text",
+     "originator": "cellsyntOriginator-value",
+     "allowconcat": 1
+    },
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Cellsynt",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://se-1.cellsynt.net/sms.php",
+    "headers": {},
+    "params": {
+     "username": "cellsyntLogin-value",
+     "password": "cellsyntPassword-value",
+     "destination": "cellsyntDestination-value",
+     "text": "[web] [ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "originatortype": "text",
+     "originator": "cellsyntOriginator-value",
+     "allowconcat": 1
+    },
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WPush",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.wpush.cn/api/v1/send",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Message",
+     "content": "WPush target Testing",
+     "apikey": "wpushAPIkey-value",
+     "channel": "wpushChannel-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WPush",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.wpush.cn/api/v1/send",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Monitor Down web",
+     "content": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "apikey": "wpushAPIkey-value",
+     "channel": "wpushChannel-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WPush",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.wpush.cn/api/v1/send",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma Monitor Up web",
+     "content": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "apikey": "wpushAPIkey-value",
+     "channel": "wpushChannel-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WxPusher",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://wxpusher.zjiecode.com/api/send/message/simple-push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "content": "WxPusher target Testing",
+     "summary": "UptimeKuma Message",
+     "contentType": 1,
+     "sptList": [
+      "spt1",
+      "spt2"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WxPusher",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://wxpusher.zjiecode.com/api/send/message/simple-push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "content": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "summary": "UptimeKuma Monitor Down web",
+     "contentType": 1,
+     "sptList": [
+      "spt1",
+      "spt2"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "WxPusher",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://wxpusher.zjiecode.com/api/send/message/simple-push",
+    "headers": {},
+    "params": null,
+    "data": {
+     "content": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "summary": "UptimeKuma Monitor Up web",
+     "contentType": 1,
+     "sptList": [
+      "spt1",
+      "spt2"
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Brevo",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.brevo.com/v3/smtp/email",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "api-key": "brevoApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "sender": {
+      "email": "alerts@example.invalid",
+      "name": "brevoFromName-value"
+     },
+     "to": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ],
+     "subject": "brevoSubject-value",
+     "htmlContent": "<html><head></head><body><p>Brevo target Testing</p></body></html>",
+     "cc": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ],
+     "bcc": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Brevo",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.brevo.com/v3/smtp/email",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "api-key": "brevoApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "sender": {
+      "email": "alerts@example.invalid",
+      "name": "brevoFromName-value"
+     },
+     "to": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ],
+     "subject": "brevoSubject-value",
+     "htmlContent": "<html><head></head><body><p>[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443</p></body></html>",
+     "cc": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ],
+     "bcc": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Brevo",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.brevo.com/v3/smtp/email",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "api-key": "brevoApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "sender": {
+      "email": "alerts@example.invalid",
+      "name": "brevoFromName-value"
+     },
+     "to": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ],
+     "subject": "brevoSubject-value",
+     "htmlContent": "<html><head></head><body><p>[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443</p></body></html>",
+     "cc": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ],
+     "bcc": [
+      {
+       "email": "alerts@example.invalid"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Resend",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.resend.com/emails",
+    "headers": {
+     "Authorization": "Bearer resendApiKey-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "from": "resendFromName-value <alerts@example.invalid>",
+     "to": "alerts@example.invalid",
+     "subject": "resendSubject-value",
+     "text": "Resend target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Resend",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.resend.com/emails",
+    "headers": {
+     "Authorization": "Bearer resendApiKey-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "from": "resendFromName-value <alerts@example.invalid>",
+     "to": "alerts@example.invalid",
+     "subject": "resendSubject-value",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Resend",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.resend.com/emails",
+    "headers": {
+     "Authorization": "Bearer resendApiKey-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "from": "resendFromName-value <alerts@example.invalid>",
+     "to": "alerts@example.invalid",
+     "subject": "resendSubject-value",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "YZJ",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook?yzjtype=0&yzjtoken=yzjToken-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "content": "YZJ target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "YZJ",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook?yzjtype=0&yzjtoken=yzjToken-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "content": "❌ web \n> connect ECONNREFUSED 127.0.0.1:443\n> Time (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "YZJ",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook?yzjtype=0&yzjtoken=yzjToken-value",
+    "headers": {
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "content": "✅ web \n> connect ECONNREFUSED 127.0.0.1:443\n> Time (UTC): 2026-01-02 03:04:05"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSPlanet",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api2.smsplanet.pl/sms",
+    "headers": {
+     "Authorization": "Bearer smsplanetApiToken-value",
+     "content-type": "multipart/form-data"
+    },
+    "params": null,
+    "data": {
+     "from": "smsplanetSenderName-value",
+     "to": "+15550100",
+     "msg": "SMSPlanet target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSPlanet",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api2.smsplanet.pl/sms",
+    "headers": {
+     "Authorization": "Bearer smsplanetApiToken-value",
+     "content-type": "multipart/form-data"
+    },
+    "params": null,
+    "data": {
+     "from": "smsplanetSenderName-value",
+     "to": "+15550100",
+     "msg": "[web] [❌ Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SMSPlanet",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api2.smsplanet.pl/sms",
+    "headers": {
+     "Authorization": "Bearer smsplanetApiToken-value",
+     "content-type": "multipart/form-data"
+    },
+    "params": null,
+    "data": {
+     "from": "smsplanetSenderName-value",
+     "to": "+15550100",
+     "msg": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SpugPush",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://push.spug.cc/send/templateKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma Message",
+     "content": "SpugPush target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SpugPush",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://push.spug.cc/send/templateKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma 「web」 is Down",
+     "content": "[🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SpugPush",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://push.spug.cc/send/templateKey-value",
+    "headers": {},
+    "params": null,
+    "data": {
+     "title": "UptimeKuma 「web」 is Up",
+     "content": "[✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "notifery",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.notifery.com/event",
+    "headers": {
+     "Content-Type": "application/json",
+     "x-api-key": "notiferyApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "title": "notiferyTitle-value",
+     "message": "notifery target Testing",
+     "group": "notiferyGroup-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "notifery",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.notifery.com/event",
+    "headers": {
+     "Content-Type": "application/json",
+     "x-api-key": "notiferyApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "title": "notiferyTitle-value",
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443\n\nMonitor: https://kuma.example.invalid/dashboard/1",
+     "group": "notiferyGroup-value",
+     "code": 1,
+     "duration": 37
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "notifery",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.notifery.com/event",
+    "headers": {
+     "Content-Type": "application/json",
+     "x-api-key": "notiferyApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "title": "notiferyTitle-value",
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443\n\nMonitor: https://kuma.example.invalid/dashboard/1",
+     "group": "notiferyGroup-value",
+     "code": 0,
+     "duration": 37
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smsir",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.sms.ir/v1/send/verify",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "X-API-Key": "smsirApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "mobile": "+15550100",
+     "templateId": null,
+     "parameters": [
+      {
+       "name": "uptkumaalert",
+       "value": "smsir target Testing"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smsir",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.sms.ir/v1/send/verify",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "X-API-Key": "smsirApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "mobile": "+15550100",
+     "templateId": null,
+     "parameters": [
+      {
+       "name": "uptkumaalert",
+       "value": "[web][🔴Down]con..."
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "smsir",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.sms.ir/v1/send/verify",
+    "headers": {
+     "Content-Type": "application/json",
+     "Accept": "application/json",
+     "X-API-Key": "smsirApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "mobile": "+15550100",
+     "templateId": null,
+     "parameters": [
+      {
+       "name": "uptkumaalert",
+       "value": "[web][✅Up]connec..."
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SendGrid",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer sendgridApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "personalizations": [
+      {
+       "to": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ],
+       "cc": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ],
+       "bcc": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ]
+      }
+     ],
+     "from": {
+      "email": "alerts@example.invalid"
+     },
+     "subject": "sendgridSubject-value",
+     "content": [
+      {
+       "type": "text/plain",
+       "value": "SendGrid target Testing"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SendGrid",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer sendgridApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "personalizations": [
+      {
+       "to": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ],
+       "cc": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ],
+       "bcc": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ]
+      }
+     ],
+     "from": {
+      "email": "alerts@example.invalid"
+     },
+     "subject": "sendgridSubject-value",
+     "content": [
+      {
+       "type": "text/plain",
+       "value": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "SendGrid",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer sendgridApiKey-value"
+    },
+    "params": null,
+    "data": {
+     "personalizations": [
+      {
+       "to": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ],
+       "cc": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ],
+       "bcc": [
+        {
+         "email": "alerts@example.invalid"
+        }
+       ]
+      }
+     ],
+     "from": {
+      "email": "alerts@example.invalid"
+     },
+     "subject": "sendgridSubject-value",
+     "content": [
+      {
+       "type": "text/plain",
+       "value": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+      }
+     ]
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "TurboSMTP",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.turbo-smtp.com/api/v2/mail/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "consumerKey": "turbosmtpConsumerKey-value",
+     "consumerSecret": "turbosmtpConsumerSecret-value"
+    },
+    "params": null,
+    "data": {
+     "from": "alerts@example.invalid",
+     "to": "alerts@example.invalid",
+     "subject": "turbosmtpSubject-value",
+     "content": "TurboSMTP target Testing",
+     "cc": "alerts@example.invalid",
+     "bcc": "alerts@example.invalid"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "TurboSMTP",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.turbo-smtp.com/api/v2/mail/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "consumerKey": "turbosmtpConsumerKey-value",
+     "consumerSecret": "turbosmtpConsumerSecret-value"
+    },
+    "params": null,
+    "data": {
+     "from": "alerts@example.invalid",
+     "to": "alerts@example.invalid",
+     "subject": "turbosmtpSubject-value",
+     "content": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "cc": "alerts@example.invalid",
+     "bcc": "alerts@example.invalid"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "TurboSMTP",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.turbo-smtp.com/api/v2/mail/send",
+    "headers": {
+     "Content-Type": "application/json",
+     "consumerKey": "turbosmtpConsumerKey-value",
+     "consumerSecret": "turbosmtpConsumerSecret-value"
+    },
+    "params": null,
+    "data": {
+     "from": "alerts@example.invalid",
+     "to": "alerts@example.invalid",
+     "subject": "turbosmtpSubject-value",
+     "content": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "cc": "alerts@example.invalid",
+     "bcc": "alerts@example.invalid"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Whatsapp360messenger",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.360messenger.com/v2/sendMessage",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer Whatsapp360messengerAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "phonenumber": "+15550100",
+     "text": "Whatsapp360messenger target Testing"
+    }
+   },
+   {
+    "method": "POST",
+    "url": "https://api.360messenger.com/v2/sendGroup",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer Whatsapp360messengerAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "groupId": "Whatsapp360messengerGroupIds-value",
+     "text": "Whatsapp360messenger target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully. (Sent to 1 recipient(s) and 1 group(s))",
+  "error": null
+ },
+ {
+  "name": "Whatsapp360messenger",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.360messenger.com/v2/sendMessage",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer Whatsapp360messengerAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "phonenumber": "+15550100",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   },
+   {
+    "method": "POST",
+    "url": "https://api.360messenger.com/v2/sendGroup",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer Whatsapp360messengerAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "groupId": "Whatsapp360messengerGroupIds-value",
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully. (Sent to 1 recipient(s) and 1 group(s))",
+  "error": null
+ },
+ {
+  "name": "Whatsapp360messenger",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.360messenger.com/v2/sendMessage",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer Whatsapp360messengerAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "phonenumber": "+15550100",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   },
+   {
+    "method": "POST",
+    "url": "https://api.360messenger.com/v2/sendGroup",
+    "headers": {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Authorization": "Bearer Whatsapp360messengerAuthToken-value"
+    },
+    "params": null,
+    "data": {
+     "groupId": "Whatsapp360messengerGroupIds-value",
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully. (Sent to 1 recipient(s) and 1 group(s))",
+  "error": null
+ },
+ {
+  "name": "Webpush",
+  "skipped": "transport is not HTTP, so the client stand-in does not reach it"
+ },
+ {
+  "name": "HaloPSA",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic aGFsb1VzZXJuYW1lLXZhbHVlOmhhbG9QYXNzd29yZC12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma Alert",
+     "status": "UNKNOWN",
+     "monitor": "No Monitor",
+     "monitor_id": null,
+     "message": "HaloPSA target Testing",
+     "timestamp": "2026-08-27T09:33:13.433Z",
+     "uptime_kuma_version": "unknown"
+    }
+   }
+  ],
+  "result": "Sent successfully.",
+  "error": null
+ },
+ {
+  "name": "HaloPSA",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic aGFsb1VzZXJuYW1lLXZhbHVlOmhhbG9QYXNzd29yZC12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma Alert",
+     "status": "DOWN",
+     "monitor": "web",
+     "monitor_id": 1,
+     "message": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443",
+     "timestamp": "2026-08-27T09:33:13.433Z",
+     "uptime_kuma_version": "unknown"
+    }
+   }
+  ],
+  "result": "Sent successfully.",
+  "error": null
+ },
+ {
+  "name": "HaloPSA",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Basic aGFsb1VzZXJuYW1lLXZhbHVlOmhhbG9QYXNzd29yZC12YWx1ZQ=="
+    },
+    "params": null,
+    "data": {
+     "title": "Uptime Kuma Alert",
+     "status": "UP",
+     "monitor": "web",
+     "monitor_id": 1,
+     "message": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443",
+     "timestamp": "2026-08-27T09:33:13.433Z",
+     "uptime_kuma_version": "unknown"
+    }
+   }
+  ],
+  "result": "Sent successfully.",
+  "error": null
+ },
+ {
+  "name": "max",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/messages?chat_id=maxChatID-value",
+    "headers": {
+     "Authorization": "maxBotToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "text": "max target Testing"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "max",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/messages?chat_id=maxChatID-value",
+    "headers": {
+     "Authorization": "maxBotToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "text": "[web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "max",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://example.invalid/hook/messages?chat_id=maxChatID-value",
+    "headers": {
+     "Authorization": "maxBotToken-value",
+     "Content-Type": "application/json"
+    },
+    "params": null,
+    "data": {
+     "text": "[web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "VK",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.vk.ru/method/messages.send",
+    "headers": {},
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "VK",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.vk.ru/method/messages.send",
+    "headers": {},
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "VK",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "https://api.vk.ru/method/messages.send",
+    "headers": {},
+    "params": null,
+    "data": {}
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "VKTeams",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook/bot/v1/messages/sendText?token=vkteamsBotToken-value&chatId=vkteamsChatId-value&text=VKTeams+target+Testing",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "VKTeams",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook/bot/v1/messages/sendText?token=vkteamsBotToken-value&chatId=vkteamsChatId-value&text=%5Bweb%5D+%5B%F0%9F%94%B4+Down%5D+connect+ECONNREFUSED+127.0.0.1%3A443",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "VKTeams",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "GET",
+    "url": "https://example.invalid/hook/bot/v1/messages/sendText?token=vkteamsBotToken-value&chatId=vkteamsChatId-value&text=%5Bweb%5D+%5B%E2%9C%85+Up%5D+connect+ECONNREFUSED+127.0.0.1%3A443",
+    "headers": {},
+    "params": null,
+    "data": null
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Milky",
+  "shape": "test",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "httpAddr-value/api/send_private_message",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "message": [
+      {
+       "type": "text",
+       "data": {
+        "text": "UptimeKuma Alert: Milky target Testing"
+       }
+      }
+     ],
+     "user_id": "recieverId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Milky",
+  "shape": "down",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "httpAddr-value/api/send_private_message",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "message": [
+      {
+       "type": "text",
+       "data": {
+        "text": "UptimeKuma Alert: [web] [🔴 Down] connect ECONNREFUSED 127.0.0.1:443"
+       }
+      }
+     ],
+     "user_id": "recieverId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ },
+ {
+  "name": "Milky",
+  "shape": "up",
+  "requests": [
+   {
+    "method": "POST",
+    "url": "httpAddr-value/api/send_private_message",
+    "headers": {
+     "Content-Type": "application/json",
+     "Authorization": "Bearer accessToken-value"
+    },
+    "params": null,
+    "data": {
+     "message": [
+      {
+       "type": "text",
+       "data": {
+        "text": "UptimeKuma Alert: [web] [✅ Up] connect ECONNREFUSED 127.0.0.1:443"
+       }
+      }
+     ],
+     "user_id": "recieverId-value"
+    }
+   }
+  ],
+  "result": "Sent Successfully.",
+  "error": null
+ }
+]

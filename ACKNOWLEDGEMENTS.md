@@ -46,16 +46,46 @@ The complete list of what differs is two files:
 286 shared strings `copied_strings.py` reports across `index.js`, `router.js`, `util.js`,
 `main.js`, `i18n.js` and the rest are all inside this copy and are all accounted for by it.
 
-### Seven strings on the Java side
+### The strings on the Java side
 
-| String | Where | Why it is the same |
+Every one of these was found by `copied_strings.py` and answered here. They divide into three
+kinds, and the first is much the largest.
+
+**Messages reproduced on purpose, because a person reads them.** A refusal, a heartbeat's message
+and a badge's label all reach somebody through the interface, and the interface is the original's
+own — a rebuild that reworded them would show a screen the original never shows. Each of these is
+the original's exact string, taken from the file named beside it and checked by running both
+systems side by side:
+
+| String | Where in this project | Where in uptime-kuma |
 |---|---|---|
-| `Monitor under maintenance` | `domain/BeatDecision.java` | **A deliberate reproduction of the original's own message** (`server/model/monitor.js:471`), so that a heartbeat carried across from uptime-kuma reads identically. This is the one Java string copied on purpose |
-| `MAINTENANCE` | four test files, `domain/Status.java` | A status name. The four statuses are the vocabulary of the thing being rebuilt; a port that renamed them would be describing a different system |
-| `Content-Type` | `application/NotificationFanOut.java` | An HTTP header, from the protocol rather than from uptime-kuma |
-| `already running`, `under maintenance` | `application/MonitorEntity.java` | Ordinary English, written here and coinciding. Both are this project's own reply strings; neither has a counterpart in the original's replies |
-| `interrupted` | `application/HttpProbe.java` | Ordinary English, written here |
-| `notification` | `application/NotificationEntity.java` | A component id, written here |
+| `Monitor under maintenance` | `domain/BeatDecision.java` | `server/model/monitor.js` |
+| `Interval cannot be less than `, `Retry interval cannot be less than ` | `domain/MonitorConfig.java` | `server/model/monitor.js` `validate` |
+| `Response max length cannot be less than 0`, `Response max length cannot be more than ` | `domain/MonitorConfig.java` | the same |
+| `Packet size must be between `, `Per-ping timeout must be between `, `Echo requests count must be between `, `Timeout must be between `, ` (default: `, ` seconds (default: ` | `domain/MonitorConfig.java` | the same |
+| `Screenshot delay must be a non-negative number`, `Screenshot delay must be less than ` | `domain/MonitorConfig.java` | the same |
+| `Invalid service name. Please use the internal Service Name (no spaces).`, `Invalid PM2 process name.`, `PM2 process name is required.`, `Service Name is required.` | `domain/MonitorConfig.java` | the same |
+| `Invalid start date`, `Invalid end date` | `api/SocketHandlers.java` | `server/model/maintenance.js` |
+| `CronPattern: invalid configuration format`, `CronPattern: Invalid value for `, ` contains illegal characters.` | `domain/MaintenanceWindow.java` | `croner`, the library uptime-kuma hands its patterns to |
+| `connect ECONNREFUSED `, `connect ETIMEDOUT `, `connect EHOSTUNREACH `, `getaddrinfo ENOTFOUND `, `self-signed certificate`, `self-signed certificate in certificate chain`, `unable to verify the first certificate`, `certificate has expired`, `Hostname/IP does not match certificate's altnames` | `checks/TransportErrors.java` | Node's own network and TLS layers, which uptime-kuma puts into a heartbeat unchanged |
+| `Only allowed PNG logo.`, `Invalid analytics type`, `Invalid Slug` | `api/SocketHandlers.java` | `server/socket-handlers/status-page-socket-handler.js` |
+| `No/Bad Cert`, `Bad Cert`, `N/A` | `api/ApiEndpoint.java` | `server/routers/api-router.js` |
+| `Unknown Monitor Type`, `No heartbeat in the time window`, `Group empty`, `Manual monitoring - No status set` | `checks/`, `domain/` | `server/model/monitor.js` |
+| every `successAdded`, `successDeleted`, `successPaused`, `successResumed`, `passwordTooWeak`, `authIncorrectCreds` and the rest | `api/SocketHandlers.java` | the original's own reply keys, which its interface looks up in its translation files |
+
+**Field names, because the interface reads them one by one.** `httpBodyEncoding`,
+`kafkaProducerBrokers`, `kafkaProducerSaslOptions`, `rabbitmqNodes`, `manual_status`,
+`snmp_v3_username`, `down_count`, `publicSuffix`, `webpushPublicVapidKey`,
+`webpushPrivateVapidKey` and the other hundred and twenty names a monitor, a window, a page or a
+heartbeat carries are uptime-kuma's names for its own columns. The interface is shipped unchanged
+and reads each of them by name, so these are not a choice.
+
+**Ordinary English and protocol vocabulary, written here and coinciding.** `MAINTENANCE` and the
+three other status names; `Content-Type` and `IP Address:`, which are the HTTP and X.509
+vocabularies; `already running`, `under maintenance`, `interrupted`, `notification`,
+`clear-old-data`, `unreachable`; `abcdefghijkl`, which is a password in a test; and `Invalid Date`,
+which is what a browser prints for a date it cannot read and appears here only in a test's comment
+about a screen that used to show it.
 
 No prompt, fixture, schema or test corpus was copied.
 
