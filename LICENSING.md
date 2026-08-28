@@ -6,11 +6,12 @@ This repository holds two kinds of code and they are not under the same licence.
 
 Everything outside the vendored trees listed below was written for this project. It is a
 clean-room implementation: written against a specification derived by running
-[louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) and recording what it does, not by translating
-its source. See `../uptime-kuma-port/specs/SPEC-001-uptime-kuma.md` for the rules it was built to, and `ACKNOWLEDGEMENTS.md` for the
+[louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) and recording what it does, not by translating its
+source. See `../uptime-kuma-port/specs/SPEC-001-uptime-kuma.md` for the rules it was built to, and `ACKNOWLEDGEMENTS.md` for the
 places any text was carried across and why.
 
-It is licensed under the Apache License 2.0. See `LICENSE`.
+It is licensed under the Apache License 2.0, Copyright 2026 Tyler Jewell. See `LICENSE`
+and `NOTICE`.
 
 ## The interface — MIT, as louislam/uptime-kuma licensed it
 
@@ -18,10 +19,10 @@ It is licensed under the Apache License 2.0. See `LICENSE`.
 - `src/main/resources/charwidths/`
 - `src/main/resources/static-resources/`
 
-That code was written by the louislam/uptime-kuma project and is shipped here **verbatim**, reused
-rather than rebuilt, per this harness's RENDERING.md R3. It remains under the licence its
-authors chose, unmodified, in `LICENSE-uptime-kuma` and beside the code itself. Nothing
-about this repository relicenses it.
+That code was written by the louislam/uptime-kuma project, Copyright 2021 Louis Lam, and is shipped
+here **verbatim**, reused rather than rebuilt, per this harness's RENDERING.md R3. It
+remains under the licence its authors chose, unmodified, in `LICENSE-uptime-kuma` and beside
+the code itself. Nothing about this repository relicenses it.
 
 ## Why the split
 
